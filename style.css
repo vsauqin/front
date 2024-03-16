@@ -1,0 +1,395 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+body {
+    background-color: #f3f5f7;
+    height: 5000px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.w {
+    width: 1200px;
+    margin: auto;
+}
+
+.header {
+    height: 42px;
+    color: #fff;
+    /* background-color: pink; */
+    margin: 30px auto;
+}
+
+.logo {
+    float: left;
+    width: 170px;
+    height: 42px;
+}
+
+.nav {
+    float: left;
+    margin-left: 70px;
+}
+
+.nav ul li {
+    float: left;
+    margin-right: 30px;
+    line-height: 42px;
+
+}
+
+.nav ul li a {
+    height: 42;
+    padding: 0 10px;
+    display: block;
+    color: black;
+    font-size: 18px;
+}
+
+.nav ul li a:hover {
+    /* background-color: rgb(0, 164, 255); */
+    border-bottom: rgb(0, 164, 255) 2px solid;
+    color: rgb(0, 164, 255);
+}
+
+.search {
+    float: left;
+    width: 412px;
+    height: 42px;
+    background-color: #fff;
+    margin-left: 10px;
+}
+
+.search input {
+    float: left;
+    width: 345px;
+    height: 40px;
+    border: rgb(0, 164, 255) 2px solid;
+    border-right: none;
+    padding-left: 15px;
+}
+
+.search button {
+    float: left;
+    width: 50px;
+    height: 44px;
+    background-color: rgb(0, 164, 255);
+    border: none;
+}
+
+.user {
+    float: right;
+    margin-right: 60px;
+    width: 420;
+    height: 42px;
+    line-height: 42px;
+    font-size: 18px;
+}
+
+.user img {
+    float: left;
+    width: 42px;
+    height: 42px;
+    margin-left: 20px;
+    border-radius: 21px;
+    /* margin-right: 20px; */
+}
+
+.user a {
+    float: left;
+    color: black;
+    margin-left: 20px;
+}
+
+.user a:hover {
+    color: rgb(0, 164, 255);
+    border-bottom: rgb(0, 164, 255) 2px solid;
+}
+
+.two {
+    height: 421px;
+    background-color: rgb(27, 12, 111);
+}
+
+.two .w {
+    /* width: 1200px; */
+    height: 421px;
+    /* background-color: pink; */
+    margin: auto;
+    background: url(images/banner2_20190819_210028.png) no-repeat top center;
+}
+
+.subnav {
+    float: left;
+    width: 190px;
+    height: 421px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    font-size: 16px;
+}
+
+.subnav ul li a {
+    text-decoration: none;
+    color: #f3f5f7;
+    display: block;
+    width: 170px;
+    height: 46.7px;
+    line-height: 46.7px;
+    padding-left: 30px;
+    font-size: 14px;
+}
+
+.subnav a span {
+    float: right;
+    margin-right: 20px;
+}
+
+.subnav ul li a:hover {
+    color: skyblue;
+}
+
+.course {
+    float: right;
+    margin-top: 50px;
+    width: 230px;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+}
+
+.course h2 {
+    height: 48px;
+    background-color: #9bceea;
+    text-align: center;
+    line-height: 48px;
+    color: white;
+    font-size: 18px;
+}
+
+.bd {
+    padding: 0 20px;
+}
+
+.bd ul li h4 {
+    color: #4e4e4e;
+    font-size: 16px;
+
+}
+
+.bd ul li p {
+    color: #4e4e4e;
+    font-size: 12px;
+
+}
+
+/* .bd ul li a {
+    color: #a5a5a5;
+    font-size: 12px;
+} */
+
+.bd ul li {
+    padding: 14px 0;
+    border-bottom: 1px dashed #e5e5e5;
+
+}
+
+.bd ul li a:hover {
+    color: #9bceea;
+}
+
+.bd .more {
+    display: block;
+    height: 38px;
+    border: 1px solid #00a4ff;
+    margin-top: 5px;
+    text-align: center;
+    line-height: 38px;
+    color: #00a4ff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.bd .more:hover {
+    color: aqua;
+}
+
+.goods {
+    margin-top: 10px;
+    height: 60px;
+    box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.4);
+    background-color: white;
+}
+
+.goods h3 {
+    float: left;
+    margin-left: 20px;
+    padding-right: 30px;
+    line-height: 60px;
+    color: #00a4ff;
+    font-size: 18px;
+}
+
+.goods ul li {
+    float: left;
+    /* padding: 0 30px;
+    line-height: 60px;
+    color: black;
+    font-size: 18px; */
+}
+
+.goods ul li a {
+    color: #050505;
+    padding: 0 30px;
+    font-size: 18px;
+    line-height: 60px;
+    /* margin-left: 10px; */
+    border-left: 3px solid #a5a5a5;
+}
+
+
+
+.goods .mod {
+    float: right;
+    margin-right: 40px;
+    line-height: 60px;
+    color: #00a4ff;
+    font-size: 18px;
+}
+
+.goods a:hover {
+    color: orange;
+}
+
+.box {
+    margin-top: 40px;
+}
+
+.box .box-hd {
+    height: 45px;
+    background-color: transparent;
+}
+
+.box .box-hd h3 {
+    float: left;
+    color: #494949;
+    line-height: 45px;
+    font-size: 20px;
+}
+
+.box .box-hd a {
+    float: right;
+    margin: 10px 25px 0 0;
+    color: #a5a5a5;
+    font-size: 16px;
+}
+
+.box .box-bd ul {
+    width: 1225px;
+}
+
+.box .box-bd ul li {
+    position: relative;
+    float: left;
+    margin-right: 15px;
+    background-color: white;
+    width: 228px;
+    height: 260px;
+    margin-bottom: 15px;
+}
+
+.box .box-bd ul li>img {
+    width: 100%;
+}
+
+.box .box-bd ul li em {
+    position: absolute;
+    top: 5px;
+    right: -4px;
+}
+
+.box .box-bd ul li h4 {
+    margin: 20px 20px 15px 25px;
+    font-size: 14px;
+    color: #050505;
+    font-weight: 400;
+}
+
+.box .box-bd ul li .in {
+    margin-left: 25px;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.box .box-bd ul li .in span {
+    color: orange;
+}
+
+.footer {
+
+    height: 415px;
+    background-color: white;
+    padding-top: 40px;
+}
+
+.copyright {
+    float: left;
+}
+
+.copyright p {
+    color: black;
+    font-size: 13px;
+    margin-top: 30px;
+}
+
+
+.copyright .app {
+    display: block;
+    width: 118px;
+    height: 33px;
+    margin-top: 40px;
+    border: 1px solid #00a4ff;
+    text-align: center;
+    line-height: 33px;
+    color: #00a4ff;
+    font-size: 16px;
+}
+
+.links {
+    float: right;
+}
+
+.links dl {
+    float: left;
+    margin-left: 100px;
+}
+
+.links dl dt {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.links dl dd a {
+    color: black;
+    font-size: 12px;
+}
