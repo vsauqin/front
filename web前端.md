@@ -820,7 +820,7 @@ margin: 0 auto;
 
 ​		当上下相邻的两个块元素（兄弟关系）相遇时，如果上面的元素有下外边距 margin-bottom，下面的元素有上外边距 margin-top ，则他们之间的垂直间距不是 margin-bottom 与 margin-top 之和。取两个值中的较大者这种现象被称为相邻块元素垂直外边距的合并。
 
-![1571494239103](E:/pink前端基础带资料/基础部分/05-前端基础CSS第三天/笔记/images/1571494239103.png)
+
 
 解决方案：
 		尽量只给一个盒子添加 margin 值。
@@ -1362,202 +1362,6 @@ Cutterman是一款运行在photoshop中的插件，能够自动将你需要的�
 ```
 
 
-
-
-
-## 3. 学成在线页面制作
-
-页面展示：
-
-![1571304358699](https://raw.githubusercontent.com/vsauqin/image/4bddb3f547e2f39413efdace0a460e8f08262ae2/1571304358699.png)
-
-
-
-学成在线，是典型的企业级网站。
-
-学习学成网的目的，是为了整体感知企业级网站布局流程，带着大家复习以前的知识。
-
-
-
-
-
-### 3.1.  前期准备素材
-
-- 学成在线PSD源文件
-- 开发工具  =  PS（切图） +  sublime（代码） + chrome（测试）
-
-### 3.2.  前期准备工作
-
-先把我们的前期准备工作做好， 我们本次采取结构与样式相分离思想。
-
-1. 创建 study 目录文件夹 (用于存放我们这个页面的相关内容)。
-
-2. 用vscode打开study目录文件夹.
-
-3. study 目录内新建 images 文件夹，用于保存图片。
-
-4. 新建首页文件 index.html（以后我们的网站**首页**统一命名规定为 **index.html** )。
-
-5. 新建 style.css 样式文件。我们本次采用外链样式表。
-
-6. 将样式引入到我们的 HTML 页面文件中。
-
-7. 样式表写入清除内外边距的样式，来检测样式表是否引入成功。
-
-![1571305757590](https://raw.githubusercontent.com/vsauqin/image/4bddb3f547e2f39413efdace0a460e8f08262ae2/1571305757590.png) 
-
-### 3.3. 页面布局整体思路
-
-为了提高网页制作的效率，布局时通常有以下的整体思路，具体如下：
-
-​	1.必须确定页面的**版心**（可视区），我们**测量**可得知。
-
-​	2.分析页面中的行模块，以及每个行模块中的列模块。其实页面布局第一准则.
-
-​	3.一行中的列模块经常浮动布局, 先确定每个列的大小,之后确定列的位置.  页面布局第二准则
-
-​	4.制作 HTML 结构。我们还是遵循，先有结构，后有样式的原则。结构永远最重要.
-
-​	5.所以, 先理清楚**布局结构**,再写代码尤为重要. 这需要我们多写多积累.
-
-### 3.4. 页面制作
-
-**确定版心**：
-
-​	这个页面的版心是 1200像素  ，每个版心都要水平居中对齐，所以，我们可以定义版心为公共类：
-
-```css
-.w {
-    width: 1200px;
-    margin: auto;
-}
-```
-
-#### 3.4.1. header头部制作
-
-**结构图如下：**
-
-<img src="E:\pink前端基础带资料\基础部分\07-前端基础CSS第五天\笔记\images\1.png" />
-
-- 1号是版心盒子 **header**  1200 *  42 的盒子水平居中对齐, 上下给一个margin值就好了。
-- 版心盒子 里面包含 2号盒子 **logo** 图标
-- 版心盒子 里面包含 3号盒子 **nav** 导航栏
-- 版心盒子 里面包含 4号盒子 **search** 搜索框
-- 版心盒子 里面包含 5号盒子 **user** 个人信息
-- 注意，要求里面的 **4个子盒子 必须都浮动**
-
-
-
-**导航栏注意点:**
-
-实际开发中，**重要的导航栏**，我们不会直接用链接a ，而是**用 li  包含链接(li+a)的做法**
-
-​	1.li+a 语义更清晰，一看这就是有条理的列表型内容。
-
-​	2.如果直接用a，搜索引擎容易辨别为有堆砌关键字嫌疑（故意堆砌关键字容易被搜索引擎有降权的风险），从而影响网站排名
-
-**注意:** 
-
-​	1.让导航栏一行显示, 给 li 加浮动, 因为 li 是块级元素, 需要一行显示.
-
-​	2.这个nav导航栏可以不给宽度,将来可以继续添加其余文字
-
-​	3.因为导航栏里面文字不一样多,所以最好给链接 a 左右padding 撑开盒子,而不是指定宽度 
-
-**4号盒子search的细节：**
-
-​	search 搜索框的意思:  一个 search 大盒子里面包含 2个 表单
-
-​	技巧：input和button都，属于行内块元素，会有缝隙，使用浮动，可以去缝隙。
-
-![1571307430101](https://raw.githubusercontent.com/vsauqin/image/4bddb3f547e2f39413efdace0a460e8f08262ae2/1571307430101.png)
-
-#### 3.4.2. banner制作
-
-结构图如下：
-
-![1571314623135](https://raw.githubusercontent.com/vsauqin/image/4bddb3f547e2f39413efdace0a460e8f08262ae2/1571314623135.png)
-
-<img src="E:\pink前端基础带资料\基础部分\07-前端基础CSS第五天\笔记\images\2.png" />
-
-
-
-- 1号盒子是通栏的大盒子**banner**， 不给宽度，给高度，给一个蓝色背景。
-- 2号盒子是版心 **w**， 要水平居中对齐。
-- 3号盒子版心内，左对齐 **subnav** 侧导航栏。
-- 4号盒子版心内，右对齐  **course** 课程。
-
-##### 3.4.2.1  subnav 侧导航栏 (左侧的)
-
-![1571314874385](https://raw.githubusercontent.com/vsauqin/image/4bddb3f547e2f39413efdace0a460e8f08262ae2/1571314861301%20-%20%E5%89%AF%E6%9C%AC.png)   
-
-- subnav 盒子 背景色 黑色半透明
-- 重要的导航栏，li 包 a ，行高45px
-- a里面包含文字和span，span右浮动
-- 当鼠标经过a ，a里面的内容（文字和span）变蓝色
-
-
-
-##### 3.4.2.2  course课程表模块 (右侧的)
-
-结构图如下：
-
- <img src="E:\pink前端基础带资料\基础部分\07-前端基础CSS第五天\笔记\images\6.png" />
-
-- 1号盒子 是  228 * 300 的盒子 右浮动  **注意 浮动的元素 不会有外边距塌陷的问题**
-- 1号盒子内 分为 上下 两个 子盒子
-- 2号子盒子是 上部分  我们命名为 course-hd    (hd  是  head  的简写 头部的意思，我们经常用)
-- 3号子盒子是 下部分  我们命名为 course-bd    (bd  是  body  的简写 主体的意思，我们经常用)
-
-#### 3.4.3. 精品推荐小模块
-
-结构图如下：
-
-<img src="E:\pink前端基础带资料\基础部分\07-前端基础CSS第五天\笔记\images\3.png" />
-
-- **复习点：**  因为里面三个盒子都要垂直居中，我们利用 继承性，给 最大的盒子 一个垂直居中的代码就好了，还记得 那些 样式可以继承吗？？？ font-  line-  text- color
-
-  
-
-- 大盒子水平居中 goods  精品 ，注意此处有个盒子阴影
-
-- 1号盒子是标题 H3  左侧浮动
-
-- 2号盒子 里面放链接  左侧浮动  goods-item    距离可以控制链接的 左右外边距（注意行内元素只给左右内外边距）
-
-- 3号盒子 右浮动 mod 修改
-
-#### 3.4.4. 精品推荐大模块
-
-结构图如下：
-
-<img src="E:\pink前端基础带资料\基础部分\07-前端基础CSS第五天\笔记\images\4.png" />
-
-- 1号盒子为最大的盒子 **box**  版心水平居中对齐
-- 2号盒子为上面部分 **box-hd**  -- 里面   左侧标题H3 左浮动   右侧 链接 a 右浮动
-- 3号盒子为底下部分 **box-bd** --- 里面是无序列表 有 10个 小li 组成
-- 小li 外边距的问题， 这里有个小技巧。  给box-hd 宽度为 1215 就可以一行装开5个 li了
-- 复习点：我们用到清除浮动，因为 box-hd 里面的盒子个数不一定是多少，所以我们就不给高度了，但是里面的盒子浮动会影响下面的布局，因此需要清除浮动。
-
-#### 3.4.5.  底部模块制作
-
-结构图如下：
-
-<img src="E:\pink前端基础带资料\基础部分\07-前端基础CSS第五天\笔记\images\5.png" >
-
-- 1号盒子通栏大盒子 底部 **footer**  给高度  底色是白色
-
-- 2号盒子版心水平居中
-
-- 3号盒子版权 **copyright**  左对齐 
-
-- 4号盒子 链接组 **links**  右对齐
-
-
-
-
-
-
 # css定位
 
 > **今日目标**
@@ -1577,13 +1381,13 @@ Cutterman是一款运行在photoshop中的插件，能够自动将你需要的�
 
 **场景1**： 某个元素可以自由的在一个盒子内移动位置，并且压住其他盒子.
 
-<img src="E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/01_定位示例1.gif" />
+<img src="https://github.com/vsauqin/image/blob/main/01_%E5%AE%9A%E4%BD%8D%E7%A4%BA%E4%BE%8B1.gif?raw=true" />
 
 
 
 **场景2**：当我们滚动窗口的时候，盒子是固定屏幕某个位置的。
 
-<img src="E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/ding.png" />
+<img src="https://raw.githubusercontent.com/vsauqin/image/4c7fa6b279204bf4618d623430c9179ea78e4353/ding.png" />
 
 
 
@@ -1643,7 +1447,7 @@ Cutterman是一款运行在photoshop中的插件，能够自动将你需要的�
 | `absolute` | **绝对**定位 |
 | `fixed`    | **固定**定位 |
 
- <img src="E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/26定位的概念.png">
+ <img src="https://raw.githubusercontent.com/vsauqin/image/4c7fa6b279204bf4618d623430c9179ea78e4353/26%E5%AE%9A%E4%BD%8D%E7%9A%84%E6%A6%82%E5%BF%B5.png">
 
 ### 1.3 定位模式介绍
 
@@ -1684,7 +1488,7 @@ Cutterman是一款运行在photoshop中的插件，能够自动将你需要的�
 
 - 效果图：
 
-![相对定位案例](E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/04_相对定位案例.png)
+![相对定位案例](https://raw.githubusercontent.com/vsauqin/image/4c7fa6b279204bf4618d623430c9179ea78e4353/04_%E7%9B%B8%E5%AF%B9%E5%AE%9A%E4%BD%8D%E6%A1%88%E4%BE%8B.png)
 
 
 
@@ -1710,13 +1514,13 @@ Cutterman是一款运行在photoshop中的插件，能够自动将你需要的�
 
 2. **父元素没有定位**，则以**浏览器**为准定位（Document 文档）。
 
-   <img src="E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/05_绝对定位_父级无定位.png" width="600" />
+   <img src="https://raw.githubusercontent.com/vsauqin/image/4c7fa6b279204bf4618d623430c9179ea78e4353/05_%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D_%E7%88%B6%E7%BA%A7%E6%97%A0%E5%AE%9A%E4%BD%8D.png" />
 
 3. **父元素要有定位**
 
    * 元素将依据最近的已经定位（绝对、固定或相对定位）的父元素（祖先）进行定位。
 
-<img src="E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/06_绝对定位_父级有定位.png" width="600" />
+<img src="https://raw.githubusercontent.com/vsauqin/image/4c7fa6b279204bf4618d623430c9179ea78e4353/06_%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D_%E7%88%B6%E7%BA%A7%E6%9C%89%E5%AE%9A%E4%BD%8D.png" />
 
 
 
@@ -1736,9 +1540,7 @@ Cutterman是一款运行在photoshop中的插件，能够自动将你需要的�
 
 ##### 1.3.3.2 定位口诀 —— 子绝父相
 
-弄清楚这个口诀，就明白了绝对定位和相对定位的使用场景。
-
-这个**“子绝父相”**太重要了，是我们学习定位的**口诀**，是定位中最常用的一种方式这句话的意思是：**子级是绝对定位的话，父级要用相对定位。**
+**子级是绝对定位的话，父级要用相对定位。**
 
 
 
@@ -1788,7 +1590,7 @@ Cutterman是一款运行在photoshop中的插件，能够自动将你需要的�
 
 > 固定定位举例：
 
-![固定定位案例](E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/08_固定定位案例.png)
+![固定定位案例](https://raw.githubusercontent.com/vsauqin/image/4c7fa6b279204bf4618d623430c9179ea78e4353/08_%E5%9B%BA%E5%AE%9A%E5%AE%9A%E4%BD%8D%E6%A1%88%E4%BE%8B.png)
 
 
 
@@ -1839,84 +1641,9 @@ Cutterman是一款运行在photoshop中的插件，能够自动将你需要的�
 2. `top` 和 `bottom` 不要同时使用；
 3. `left` 和 `right` 不要同时使用。
 
-## 2. 综合案例：学成在线-hot  模块添加
+## 2. 定位(position)的应用
 
-### **2. 1 案例截图**：
-
-![1571385860679](E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/1571385860679.png) 
-
-### 2.2 案例分析
-
-1. 一个大的 `li` 中包含 一个课程图片，课程介绍文字信息，还有hot的小图标；
-2. hot图片**重叠**在课程图片上面—— 脱标，不占位置，需要使用**绝对定位**；
-3. hot图片**重叠**在**li的右上方 —— 需要**使用边偏移确定准确位置。
-
-### 2.3 案例小结
-
-1. **子绝父相** —— **子元素**使用**绝对定位**，**父元素**使用**相对定位**；
-2. **与浮动的对比**：
-   * **绝对定位**：脱标，**利用边偏移指定准确位置**；
-   * **浮动**：脱标，不能指定准确位置，**让多个块级元素在一行显示**。
-
-> 课堂练习：模拟老师的随堂案例完成**哈根达斯**案例（5 分钟）。
-
-结构修改：
-
-```html
-<!-- 修改.box-bd里面的li标签内容，添加一个hot图标 -->
-
-<li>
-	 <!-- 添加hot小图片 -->
-    <em>
-        <img src="images/hot.png" alt="">
-    </em>
-    <img src="images/pic.png" alt="">
-    <h4>
-        Think PHP 5.0 博客系统实战项目演练
-    </h4>
-    <div class="info">
-        <span>高级</span> • 1125人在学习
-    </div>
-</li>
-```
-
-样式修改：
-
-```css
-.box-bd ul li {
-    /* 子绝父相 */
-    /* 父元素相对定位 */
-    position: relative;
-    float: left;
-    width: 228px;
-    height: 270px;
-    background-color: #fff;
-    margin-right: 15px;
-    margin-bottom: 15px;
-   
-}
-.box-bd ul li > img {
-    width: 100%;
-}
-.box-bd ul li h4 {
-    margin: 20px 20px 20px 25px;
-    font-size: 14px;
-    color: #050505;
-    font-weight: 400;
-}
-.box-bd ul li em {
-     /* 子元素绝对定位 */
-    position: absolute;
-    top: 4px;
-    right: -4px;
-}
-```
-
-
-
-## 3. 定位(position)的应用
-
-### 3.1.  固定定位小技巧： 固定在版心左侧位置。
+### 2.1.  固定定位小技巧： 固定在版心左侧位置。
 
 小算法：
 
@@ -1926,17 +1653,17 @@ Cutterman是一款运行在photoshop中的插件，能够自动将你需要的�
 
 就可以让固定定位的盒子**贴着版心右侧对齐**了。
 
-<img src="E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/1571388901848.png" width='350'>
+<img src="https://raw.githubusercontent.com/vsauqin/image/4c7fa6b279204bf4618d623430c9179ea78e4353/1571388901848.png" width='350'>
 
 
 
-<img src="E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/1571389108805.png" width='300'>
+<img src="https://raw.githubusercontent.com/vsauqin/image/4c7fa6b279204bf4618d623430c9179ea78e4353/1571389108805.png" width='300'>
 
 
 
 案例效果：
 
-![1571389241926](E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/1571389241926.png)
+![1571389241926](https://raw.githubusercontent.com/vsauqin/image/4c7fa6b279204bf4618d623430c9179ea78e4353/1571389241926.png)
 
 ```html
 <style>
@@ -1967,7 +1694,7 @@ Cutterman是一款运行在photoshop中的插件，能够自动将你需要的�
 
 
 
-### 3.2. 堆叠顺序（z-index）
+### 2.2. 堆叠顺序（z-index）
 
 - 在使用**定位**布局时，可能会**出现盒子重叠的情况**。此时，可以使用 **z-index** 来控制盒子的前后次序 (z轴)
 
@@ -1993,7 +1720,7 @@ Cutterman是一款运行在photoshop中的插件，能够自动将你需要的�
 
 - 应用 `z-index` 层叠等级属性可以**调整盒子的堆叠顺序**。如下图所示：
 
-![zindex示意图](E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/12_zindex示意图.png)
+![zindex示意图](https://raw.githubusercontent.com/vsauqin/image/4c7fa6b279204bf4618d623430c9179ea78e4353/12_zindex%E7%A4%BA%E6%84%8F%E5%9B%BE.png)
 
 
 
@@ -2003,15 +1730,15 @@ Cutterman是一款运行在photoshop中的插件，能够自动将你需要的�
 
 
 
-## 4. 定位(position)的拓展
+## 3. 定位(position)的拓展
 
-### 4.1 绝对定位的盒子居中
+### 3.1 绝对定位的盒子居中
 
 > **注意**：加了**绝对定位/固定定位的盒子**不能通过设置 `margin: auto` 设置**水平居中**。
 >
 > 但是可以通过以下计算方法实现水平和垂直居中，可以按照下图的方法：
 
-![绝对定位水平居中](E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/10_绝对定位水平居中.png)
+![绝对定位水平居中](https://raw.githubusercontent.com/vsauqin/image/4c7fa6b279204bf4618d623430c9179ea78e4353/10_%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD.png)
 
 1. `left: 50%;`：让**盒子的左侧**移动到**父级元素的水平中心位置**；
 2. `margin-left: -100px;`：让盒子**向左**移动**自身宽度的一半**。
@@ -2022,9 +1749,9 @@ Cutterman是一款运行在photoshop中的插件，能够自动将你需要的�
 
 **盒子居中定位示意图**
 
-![绝对定位居中示意图](E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/11_绝对定位居中示意图.png)
+![绝对定位居中示意图](https://raw.githubusercontent.com/vsauqin/image/4c7fa6b279204bf4618d623430c9179ea78e4353/11_%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%E5%B1%85%E4%B8%AD%E7%A4%BA%E6%84%8F%E5%9B%BE.png)
 
-### 4.2 定位特殊特性
+### 3.2 定位特殊特性
 
 绝对定位和固定定位也和浮动类似。
 
@@ -2042,7 +1769,7 @@ Cutterman是一款运行在photoshop中的插件，能够自动将你需要的�
 
 所以说， 一个行内的盒子，如果加了**浮动**、**固定定位**和**绝对定位**，不用转换，就可以给这个盒子直接设置宽度和高度等。
 
-### 4.3 脱标的盒子不会触发外边距塌陷
+### 3.3 脱标的盒子不会触发外边距塌陷
 
 浮动元素、**绝对定位(固定定位）**元素的都不会触发外边距合并的问题。 （我们以前是用padding border overflow解决的）
 
@@ -2050,7 +1777,7 @@ Cutterman是一款运行在photoshop中的插件，能够自动将你需要的�
 
 
 
-### 4.4 绝对定位（固定定位）会完全压住盒子
+### 3.4 绝对定位（固定定位）会完全压住盒子
 
 浮动元素不同，只会压住它下面标准流的盒子，但是不会压住下面标准流盒子里面的文字（图片）
 
@@ -2058,41 +1785,11 @@ Cutterman是一款运行在photoshop中的插件，能够自动将你需要的�
 
 浮动之所以不会压住文字，因为浮动产生的目的最初是为了做文字环绕效果的。 文字会围绕浮动元素
 
-<img src="E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/文字环绕图片.png">
-
-## 5. 综合案例 - 淘宝轮播图(重点)
-
-### 5.1 效果图
-
-<img src="E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/淘宝焦点图.png" width='600'>
-
-### 5.2 布局分析
-
-![1571397019689](E:/pink前端基础带资料/基础部分/08-前端基础CSS第六天/笔记/images/1571397019689.png)
+## 
 
 
 
-### 5.3 步骤
-
-1. 大盒子我们类名为：  tb-promo      淘宝广告
-
-2. 里面先放一张图片。
-
-3. 左右两个按钮 用链接就好了。   左箭头 prev    右箭头  next   
-
-   ​	左按钮样式（border-radius：左上，右上，右下，左下），
-
-   ​	右按钮定位，提取左右按钮共同的样式代码（并集选择器）
-
-4. 底侧小圆点ul 继续做。 类名为 promo-nav     
-
-   ​	中间长方形椭圆 ul的定位（水平居中，离底部15px）  
-
-   ​	长方形需要五个小圆点，ul无序列表，li浮动，椭圆中小圆点的样式
-
-
-
-### 5.4 知识点：圆角矩形设置4个角
+## 4.知识点：圆角矩形设置4个角
 
 圆角矩形可以为4个角分别设置圆度， 但是是有顺序的
 
@@ -2117,122 +1814,7 @@ border-radius: 左上角 右上角  右下角  左下角;
 
 还是遵循的顺时针。
 
-
-
-### 5.5 代码参考
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>淘宝轮播图做法</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        li {
-            list-style: none;
-        }
-
-        .tb-promo {
-            position: relative;
-            width: 520px;
-            height: 280px;
-            background-color: pink;
-            margin: 100px auto;
-        }
-
-        .tb-promo img {
-            width: 520px;
-            height: 280px;
-        }
-
-        /* 并集选择器可以集体声明相同的样式 */
-        .prev,
-        .next {
-            position: absolute;
-            /* 绝对定位的盒子垂直居中 */
-            top: 50%;
-            margin-top: -15px;
-            /* 加了绝对定位的盒子可以直接设置高度和宽度 */
-            width: 20px;
-            height: 30px;
-            background: rgba(0, 0, 0, .3);
-            text-align: center;
-            line-height: 30px;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .prev {
-            left: 0;
-            /* border-radius: 15px; */
-            border-top-right-radius: 15px;
-            border-bottom-right-radius: 15px;
-        }
-
-        .next {
-            /* 如果一个盒子既有left属性也有right属性，则默认会执行 left属性 同理  top  bottom  会执行 top */
-            right: 0;
-            /* border-radius: 15px; */
-            border-top-left-radius: 15px;
-            border-bottom-left-radius: 15px;
-        }
-        .promo-nav {
-            position: absolute;
-            bottom: 15px;
-            left: 50%;
-            margin-left: -35px;
-            width: 70px;
-            height: 13px;
-            /* background-color: pink; */
-            background: rgba(255,255,255, .3);
-            border-radius: 7px;
-        }
-        .promo-nav li {
-            float: left;
-            width: 8px;
-            height: 8px;
-            background-color: #fff;
-            border-radius: 50%;
-            margin: 3px;
-        }
-        /* 不要忘记选择器权重的问题 */
-       .promo-nav .selected {
-            background-color: #ff5000;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="tb-promo">
-        <img src="images/tb.jpg" alt="">
-        <!-- 左侧按钮箭头 -->
-        <a href="#" class="prev"> &lt; </a>
-        <!-- 右侧按钮箭头 -->
-        <a href="#" class="next"> &gt; </a>
-        <!-- 小圆点 -->
-        <ul class="promo-nav">
-            <li class="selected"></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </div>
-</body>
-
-</html>
-```
-
-
-
-## 6. 网页布局总结
+## 5. 网页布局总结
 
 通过盒子模型，清楚知道大部分html标签是一个盒子。
 
@@ -2240,15 +1822,15 @@ border-radius: 左上角 右上角  右下角  左下角;
 
 一个完整的网页，是标准流、浮动、定位一起完成布局的，每个都有自己的专门用法。
 
-### 6.1. 标准流 
+### 5.1. 标准流 
 
 可以让盒子上下排列或者左右排列，**垂直的块级盒子显示就用标准流布局**。
 
-### 6.2. 浮动
+### 5.2. 浮动
 
 可以让多个块级元素一行显示或者左右对齐盒子，**多个块级盒子水平显示就用浮动布局**
 
-### 6.3. 定位
+### 5.3. 定位
 
 定位最大的特点是有层叠的概念，就是可以让多个盒子前后叠压来显示。**如果元素自由在某个盒子内移动就用定位布局。**
 
@@ -2425,3 +2007,1205 @@ border-radius: 左上角 右上角  右下角  左下角;
 </html>
 ```
 
+
+
+
+
+# CSS第七天
+
+
+
+> 学习目标：
+>
+> ​	能够使用精灵图
+>
+> ​	能够使用字体图标
+>
+> ​	能够写出 CSS 三角
+>
+> ​	能够写出常见的 CSS 用户界面样式
+>
+> ​	能够说出常见的布局技巧
+
+
+
+## 1. 精灵图（重点）
+
+### 1.1 为什么需要精灵图
+
+一个网页中往往会应用很多小的背景图像作为修饰，当网页中的图像过多时，服务器就会频繁地接收和发送请求图片，造成服务器请求压力过大，这将大大降低页面的加载速度。
+
+**为什么使用精灵图（目的）：**
+
+​	**为了有效地减少服务器接收和发送请求的次数**，**提高**页面的**加载速度**，出现了 **CSS 精灵技术**（也称 CSS Sprites、CSS 雪碧）。
+
+**核心原理**：
+
+​	将网页中的一些小背景图像整合到一张大图中 ，这样服务器只需要一次请求就可以了。
+
+### 1.2 精灵图（sprites）的使用
+
+使用精灵图核心：
+
+1. 精灵技术主要针对于背景图片使用。就是把多个小背景图片整合到一张大图片中。
+2. 这个大图片也称为 sprites  精灵图  或者 雪碧图
+3. 移动背景图片位置， 此时可以使用 background-position 。
+4. 移动的距离就是这个目标图片的 x 和 y 坐标。注意网页中的坐标有所不同
+5. 因为一般情况下都是往上往左移动，所以数值是负值。
+6. 使用精灵图的时候需要精确测量，每个小背景图片的大小和位置。
+
+
+
+使用精灵图核心总结：
+
+1. 精灵图主要**针对于小的背景图片**使用。
+
+2. 主要借助于背景位置来实现---**background-position** 。
+
+3. 一般情况下精灵图都是**负值**。（千万注意网页中的坐标： x轴右边走是正值，左边走是负值， y轴同理。）
+
+### 1.3 案例：拼出自己名字
+
+## 2. 字体图标
+
+### 2.1 字体图标的产生
+
+字体图标使用场景：  主要用于显示网页中通用、常用的一些小图标。
+
+精灵图是有诸多优点的，但是缺点很明显。
+
+1.图片文件还是比较大的。
+
+2.图片本身放大和缩小会失真。
+
+3.一旦图片制作完毕想要更换非常复杂。
+
+此时，有一种技术的出现很好的解决了以上问题，就是**字体图标 iconfont**。
+
+**字体图标**可以为前端工程师提供一种方便高效的图标使用方式，**展示的是图标，本质属于字体**。
+
+### 2.2 字体图标的优点
+
+**轻量级**：一个图标字体要比一系列的图像要小。一旦字体加载了，图标就会马上渲染出来，减少了服务器请求
+
+- 灵活性：本质其实是文字，可以很随意的改变颜色、产生阴影、透明效果、旋转等
+- 兼容性：几乎支持所有的浏览器，请放心使用
+- 注意： 字体图标不能替代精灵技术，只是对工作中图标部分技术的提升和优化。
+
+**总结：**
+
+1.如果遇到一些结构和样式比较简单的小图标，就用字体图标。
+
+2.如果遇到一些结构和样式复杂一点的小图片，就用精灵图。
+
+
+
+
+
+**使用步骤**
+
+字体图标是一些网页常见的小图标，我们直接网上下载即可。 因此使用可以分为：
+
+1.字体图标的下载 
+
+2.字体图标的引入 （引入到我们html页面中）
+
+3.字体图标的追加 （以后添加新的小图标）
+
+### **2.3** **字体图标的下载**
+
+**推荐下载网站：**
+
+- **icomoon** **字库**  http://icomoon.io    推荐指数  **★★★★★**
+
+IcoMoon 成立于 2011 年，推出了第一个自定义图标字体生成器，它允许用户选择所需要的图标，使它们成一字型。该字库内容种类繁多，非常全面，唯一的遗憾是国外服务器，打开网速较慢。
+
+- **阿里** **iconfont** **字库**   http://www.iconfont.cn/   推荐指数   **★★★★★** 
+
+这个是阿里妈妈 M2UX 的一个 iconfont 字体图标字库，包含了淘宝图标库和阿里妈妈图标库。可以使用 AI制作图标上传生成。 重点是，免费！
+
+### **2.4** **字体图标的引入**
+
+**下载完毕之后，注意原先的文件不要删，后面会用**。
+
+1. 把下载包里面的 **fonts** 文件夹放入页面根目录下
+
+
+
+* **字体文件格式**
+
+不同浏览器所支持的字体格式是不一样的，字体图标之所以兼容，就是因为包含了主流浏览器支持的字体文件。
+
+1).TureType(  **.ttf**  )格式.ttf字体是Windows和Mac的最常见的字体，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome4+、Safari3+、Opera10+、iOS Mobile、Safari4.2+；
+
+2).Web Open Font Format( **.woff** )格式woff字体，支持这种字体的浏览器有IE9+、Firefox3.5+、Chrome6+、Safari3.6+、Opera11.1+；
+
+3).Embedded Open Type( **.eot** )格式.eot字体是IE专用字体，支持这种字体的浏览器有IE4+；
+
+4).SVG(  .**svg**  )格式.svg字体是基于SVG字体渲染的一种格式，支持这种字体的浏览器有Chrome4+、Safari3.1+、Opera10.0+、iOS Mobile Safari3.2+；
+
+
+
+2.在 CSS 样式中全局声明字体： 简单理解把这些字体文件通过css引入到我们页面中。
+
+一定注意字体文件路径的问题
+
+```
+ @font-face {
+   font-family: 'icomoon';
+   src:  url('fonts/icomoon.eot?7kkyc2');
+   src:  url('fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
+     url('fonts/icomoon.ttf?7kkyc2') format('truetype'),
+     url('fonts/icomoon.woff?7kkyc2') format('woff'),
+     url('fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+   font-weight: normal;
+   font-style: normal;
+ }
+
+```
+
+
+
+3. html 标签内添加小图标。
+
+![1571520411345](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571520411345.png)
+
+4. 给标签定义字体。
+
+  ```
+ span {
+   font-family: "icomoon";
+ }
+  ```
+
+  注意：务必保证 这个字体和上面@font-face里面的字体保持一致 
+
+  ![1571520485350](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571520485350.png)
+
+### 2.5 字体图标的追加
+
+如果工作中，原来的字体图标不够用了，我们需要添加新的字体图标到原来的字体文件中。
+
+把压缩包里面的 **selection.json** 从新上传，然后选中自己想要新的图标，从新下载压缩包，并替换原来的文件即可。
+
+![1571520554317](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571520554317.png)
+
+### 2.6 字体图标加载的原理：
+
+![1571520617270](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\字体图标加载的原理.gif)
+
+## 3. CSS 三角
+
+### 3.1 介绍
+
+网页中常见一些三角形，使用 CSS 直接画出来就可以，不必做成图片或者字体图标。
+
+一张图， 你就知道 CSS 三角是怎么来的了, 做法如下：
+
+![1571520965966](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571520965966.png)
+
+```css
+ div {
+ 	width: 0; 
+    height: 0;
+    border: 50px solid transparent;
+	border-color: red green blue black;
+	line-height:0;
+    font-size: 0;
+ }
+```
+
+1. 我们用css 边框可以模拟三角效果
+2. 宽度高度为0
+3. 我们4个边框都要写， 只保留需要的边框颜色，其余的不能省略，都改为 transparent 透明就好了
+4. 为了照顾兼容性 低版本的浏览器，加上 font-size: 0;  line-height: 0;
+
+### 3.2 案例：京东三角
+
+#### 3.2.1效果图
+
+![1571521183026](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571521183026.png)
+
+#### 3.2.2 代码参考
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 三角制作</title>
+    <style>
+        .box1 {
+            width: 0;
+            height: 0;
+            /* border: 10px solid pink; */
+            border-top: 10px solid pink;
+            border-right: 10px solid red;
+            border-bottom: 10px solid blue;
+            border-left: 10px solid green;
+        }
+        .box2 {
+            width: 0;
+            height: 0;
+            border: 50px solid transparent;
+            border-left-color: pink;
+            margin: 100px auto;
+        }
+        .jd {
+            position: relative;
+            width: 120px;
+            height: 249px;
+            background-color: pink;
+        }
+        .jd span {
+            position: absolute;
+            right: 15px;
+            top: -10px;
+            width: 0;
+            height: 0;
+            /* 为了照顾兼容性 */
+            line-height: 0;  
+            font-size: 0;
+            border: 5px solid transparent;
+            border-bottom-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="jd">
+        <span></span>
+    </div>
+</body>
+</html>
+```
+
+
+
+## 4. CSS 用户界面样式
+
+**什么是界面样式**
+
+所谓的界面样式，就是更改一些用户操作样式，以便提高更好的用户体验。
+
+- 更改用户的鼠标样式 
+- 表单轮廓
+- 防止表单域拖拽
+
+### 4.1 鼠标样式 cursor
+
+```css
+ li {
+ 	cursor: pointer; 
+ }
+```
+
+设置或检索在对象上移动的鼠标指针采用何种系统预定义的光标形状。
+
+![1571521805183](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571521805183.png)
+
+### 4.2 轮廓线 outline
+
+给表单添加 outline: 0;   或者  outline: none; 样式之后，就可以去掉默认的蓝色边框。
+
+```css
+ input {
+ 	outline: none; 
+ }
+```
+
+### 4.3 防止拖拽文本域 resize
+
+ 实际开发中，我们文本域右下角是不可以拖拽的。
+
+```css
+ textarea{ 
+ 	resize: none;
+ }
+```
+
+vertical-align 属性应用
+
+## 5. vertical-align 属性应用
+
+CSS 的 **vertical-align** 属性使用场景： 经常用于设置图片或者表单(行内块元素）和文字垂直对齐。
+
+官方解释： 用于设置一个元素的**垂直对齐方式**，但是它只针对于行内元素或者行内块元素有效。
+
+语法：
+
+```css
+vertical-align : baseline | top | middle | bottom 
+```
+
+![1571522023413](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522023413.png)
+
+![1571522040645](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522040645.png)
+
+### **5.1** **图片、表单和文字对齐**
+
+图片、表单都属于行内块元素，默认的 vertical-align 是基线对齐。
+
+![1571522093729](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522093729.png)
+
+此时可以给图片、表单这些行内块元素的 **vertical-align 属性设置为 middle** 就可以让文字和图片垂直居中对齐了。
+
+### 5.2 解决图片底部默认空白缝隙问题
+
+bug：图片底侧会有一个空白缝隙，原因是行内块元素会和文字的基线对齐。
+
+主要解决方法有两种：
+
+1.**给图片**添加 **vertical-align:middle | top| bottom** 等。 （提倡使用的）
+
+2.把图片转换为块级元素  **display: block**; 
+
+![1571522162225](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522162225.png)
+
+
+
+## 6. 溢出的文字省略号显示
+
+### 6.1 单行文本溢出显示省略号
+
+![1571522317809](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522317809.png)
+
+单行文本溢出显示省略号--必须满足三个条件：
+
+```css
+  /*1. 先强制一行内显示文本*/
+   white-space: nowrap;  （ 默认 normal 自动换行）
+   
+  /*2. 超出的部分隐藏*/
+   overflow: hidden;
+   
+  /*3. 文字用省略号替代超出的部分*/
+   text-overflow: ellipsis;
+```
+
+
+
+### 6.2 多行文本溢出显示省略号（了解）
+
+![1571522334591](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522334591.png)
+
+
+
+多行文本溢出显示省略号，**有较大兼容性问题**，适合于webKit浏览器或移动端（移动端大部分是webkit内核）
+
+```css
+/*1. 超出的部分隐藏 */
+overflow: hidden;
+
+/*2. 文字用省略号替代超出的部分 */
+text-overflow: ellipsis;
+
+/* 3. 弹性伸缩盒子模型显示 */
+display: -webkit-box;
+
+/* 4. 限制在一个块元素显示的文本的行数 */
+-webkit-line-clamp: 2;
+
+/* 5. 设置或检索伸缩盒对象的子元素的排列方式 */
+-webkit-box-orient: vertical;
+```
+
+**更推荐让后台人员来做这个效果，因为后台人员可以设置显示多少个字，操作更简单。**
+
+
+
+## 7. 常见布局技巧
+
+**巧妙利用一个技术更快更好的布局：**
+
+1. margin负值的运用
+2. 文字围绕浮动元素
+3. 行内块的巧妙运用
+4. CSS三角强化
+
+### 7.1. margin负值运用
+
+![1571522666082](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522666082.png)
+
+![1571522683897](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522683897.png)
+
+1.让每个盒子margin 往左侧移动 -1px 正好压住相邻盒子边框
+
+2.鼠标经过某个盒子的时候，提高当前盒子的层级即可（如果没有有定位，则加相对定位（保留位置），如果有定位，则加z-index）
+
+### 7.2 文字围绕浮动元素
+
+**效果**
+
+![1571522777745](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522777745.png)
+
+**布局示意图**
+
+![1571522761996](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522761996.png)
+
+**巧妙运用浮动元素不会压住文字的特性**
+
+### 7.3 行内块巧妙运用
+
+![1571522898744](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522898744.png)
+
+页码在页面中间显示:
+
+1. 把这些链接盒子转换为行内块， 之后给父级指定  text-align:center;
+2. 利用行内块元素中间有缝隙，并且给父级添加 text-align:center; 行内块元素会水平会居中
+
+![1571522910580](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522910580.png)
+
+### 7.4. CSS 三角强化 案例
+
+#### **7.4.1 原理**
+
+![1571550959181](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571550959181.png)
+
+![1571551000391](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571551000391.png)
+
+![1571548058053](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571548058053.png)
+
+
+
+```html
+<style>
+    .box1 {
+        width: 0;
+        height: 0;
+        
+        /* 把上边框宽度调大 */
+        /* border-top: 100px solid transparent;
+        border-right: 50px solid skyblue; */
+        /* 左边和下边的边框宽度设置为0 */
+        /* border-bottom: 0 solid blue;
+        border-left: 0 solid green; */
+        
+        /* 1.只保留右边的边框有颜色 */
+        border-color: transparent red transparent transparent;
+        /* 2. 样式都是solid */
+        border-style: solid;
+        /* 3. 上边框宽度要大， 右边框 宽度稍小， 其余的边框该为 0 */
+        border-width: 100px 50px 0 0 ;
+    }
+
+</style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+```
+
+#### 7.4.2 案例效果
+
+![1571548099631](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571548099631.png)
+
+#### **7.4.3 代码参考**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>CSS三角强化的巧妙运用</title>
+        <style>
+            .price {
+                width: 160px;
+                height: 24px;
+                line-height: 24px;
+                border: 1px solid red;
+                margin: 0 auto;
+            }
+            .miaosha {
+                position: relative;
+                float: left;
+                width: 90px;
+                height: 100%;
+                background-color:red;
+                text-align: center;
+                color: #fff;
+                font-weight: 700;
+                margin-right: 8px;
+
+            }
+            .miaosha i {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 0;
+                height: 0;
+                border-color: transparent #fff transparent transparent;
+                border-style: solid;
+                border-width: 24px 10px 0 0;
+            }
+            .origin {
+                font-size: 12px;
+                color: gray;
+                text-decoration: line-through;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="price">
+            <span class="miaosha">
+                ¥1650
+                <i></i>
+            </span>
+            <span class="origin">¥5650</span>
+        </div>
+    </body>
+</html>
+```
+
+## 8. CSS 初始化
+
+不同浏览器对有些标签的默认值是不同的，为了消除不同浏览器对HTML文本呈现的差异，照顾浏览器的兼容，我们需要对CSS 初始化
+
+简单理解： CSS初始化是指重设浏览器的样式。 (也称为CSS reset）
+
+每个网页都必须首先进行 CSS初始化。
+
+这里我们以 京东CSS初始化代码为例。
+
+**Unicode编码字体：**
+
+把中文字体的名称用相应的Unicode编码来代替，这样就可以有效的避免浏览器解释CSS代码时候出现乱码的问题。
+
+比如：
+
+黑体 \9ED1\4F53
+宋体 \5B8B\4F53
+微软雅黑 \5FAE\8F6F\96C5\9ED1
+
+# HTML5新特性
+
+## 概述
+
+HTML5 的新增特性主要是针对于以前的不足，增加了一些新的标签、新的表单和新的表单属性等。 
+
+这些新特性都有兼容性问题，基本是 **IE9+ 以上版本的浏览器**才支持，如果不考虑兼容性问题，可以大量使用这些新特性。
+
+## 语义化标签 （★★）
+
+以前布局，我们基本用 div 来做。div 对于搜索引擎来说，是没有语义的
+
+```html
+<div class=“header”> </div>
+<div class=“nav”> </div>
+<div class=“content”> </div>
+<div class=“footer”> </div>
+```
+
+发展到了HTML5后，新增了一些语义化标签，这样的话更加有利于浏览器的搜索引擎搜索，也方便了网站的seo（Search Engine Optimization，搜索引擎优化），下面就是新增的一些语义化标签
+
+- `<header>` 头部标签
+- `<nav>` 导航标签
+- `<article>` 内容标签
+- `<section>` 定义文档某个区域
+- `<aside>` 侧边栏标签
+- `<footer>` 尾部标签
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\语义化标签.png)
+
+## 多媒体标签
+
+多媒体标签分为 音频 **audio** 和视频 **video** 两个标签 使用它们，我们可以很方便的在页面中嵌入音频和视频，而不再去使用落后的flash和其他浏览器插件了。
+
+因为多媒体标签的 属性、方法、事件比较多，因此我们需要什么功能的时候，就需要去查找相关的文档进行学习使用。
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\多媒体标签.png)
+
+### 视频标签- video（★★★）
+
+#### 基本使用
+
+当前 **<video>** 元素支持三种视频格式： 尽量使用 **mp4格式**
+
+**使用语法：**
+
+```html
+ <video src="media/mi.mp4"></video>
+```
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\video支持格式.png)
+
+#### 兼容写法
+
+由于各个浏览器的支持情况不同，所以我们会有一种兼容性的写法，这种写法了解一下即可
+
+```html
+<video  controls="controls"  width="300">
+    <source src="move.ogg" type="video/ogg" >
+    <source src="move.mp4" type="video/mp4" >
+    您的浏览器暂不支持 <video> 标签播放视频
+</ video >
+```
+
+**上面这种写法，浏览器会匹配video标签中的source，如果支持就播放，如果不支持往下匹配，直到没有匹配的格式，就提示文本**
+
+#### video 常用属性
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\video常用属性.png)
+
+**属性很多，有一些属性需要大家重点掌握：**
+
+- `autoplay`  自动播放
+  - 注意： 在google浏览器上面，默认禁止了自动播放，如果想要自动播放的效果，需要设置 muted属性
+- `width`  宽度
+- `height`  高度
+- `loop`  循环播放
+- `src`  播放源
+- `muted` 静音播放
+
+**示例代码：**
+
+```html
+<video src="media/mi.mp4" autoplay="autoplay" muted="muted"  loop="loop" poster="media/mi9.jpg"></video>
+```
+
+### 音频标签- audio
+
+#### 基本使用
+
+当前 **<audio>** 元素支持三种视频格式： 尽量使用 **mp3格式**
+
+**使用语法：**
+
+```html
+<audio src="media/music.mp3"></audio>
+```
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\audio支持格式.png)
+
+#### 兼容写法
+
+由于各个浏览器的支持情况不同，所以我们会有一种兼容性的写法，这种写法了解一下即可
+
+```html
+< audio controls="controls"  >
+    <source src="happy.mp3" type="audio/mpeg" >
+    <source src="happy.ogg" type="audio/ogg" >
+    您的浏览器暂不支持 <audio> 标签。
+</ audio>
+```
+
+**上面这种写法，浏览器会匹配audio标签中的source，如果支持就播放，如果不支持往下匹配，直到没有匹配的格式，就提示文本**
+
+#### audio 常用属性
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\audio常用属性.png)
+
+**示例代码：**
+
+```html
+<audio src="media/music.mp3" autoplay="autoplay" controls="controls"></audio>
+```
+
+### 小结
+
+- 音频标签和视频标签使用方式基本一致
+- 浏览器支持情况不同
+- 谷歌浏览器把音频和视频自动播放禁止了
+- 我们可以给视频标签添加 muted 属性来静音播放视频，音频不可以（可以通过JavaScript解决）
+- 视频标签是重点，我们经常设置自动播放，不使用 controls 控件，循环和设置大小属性
+
+## 新增的表单元素 （★★）
+
+在H5中，帮我们新增加了很多类型的表单，这样方便了程序员的开发
+
+**课堂案例：在这个案例中，熟练了新增表单的用法**
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\input案例.png)
+
+**案例代码：**
+
+```html
+<!-- 我们验证的时候必须添加form表单域 -->
+<form action="">
+    <ul>
+        <li>邮箱: <input type="email" /></li>
+        <li>网址: <input type="url" /></li>
+        <li>日期: <input type="date" /></li>
+        <li>时间: <input type="time" /></li>
+        <li>数量: <input type="number" /></li>
+        <li>手机号码: <input type="tel" /></li>
+        <li>搜索: <input type="search" /></li>
+        <li>颜色: <input type="color" /></li>
+        <!-- 当我们点击提交按钮就可以验证表单了 -->
+        <li> <input type="submit" value="提交"></li>
+    </ul>
+</form>
+```
+
+ **常见输入类型**
+
+```
+text password radio checkbox button file hidden submit reset image
+```
+
+**新的输入类型**
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\新增input表单.png)
+
+类型很多，我们现阶段**重点记忆三个**： **`number`   `tel`   `search`**
+
+# CSS3新特性
+
+## CSS3 的现状
+
+- 新增的CSS3特性有兼容性问题，ie9+才支持
+- 移动端支持优于 PC 端 
+- 不断改进中 
+- 应用相对广泛
+- 现阶段主要学习：新增选择器和盒子模型以及其他特性 
+
+## CSS3  新增选择器 
+
+CSS3 给我们新增了选择器，可以更加便捷，更加自由的选择目标元素。 
+
+- 属性选择器
+- 结构伪类选择器
+- 伪元素选择器
+
+### 属性选择器（★★）
+
+属性选择器，按照字面意思，都是根据标签中的属性来选择元素
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\属性选择器.png)
+
+**示例代码：**
+
+```css
+ /* 只选择 type =text 文本框的input 选取出来 */
+input[type=text] {
+    color: pink;
+}
+/* 选择首先是div 然后 具有class属性 并且属性值 必须是 icon开头的这些元素 */
+div[class^=icon] {
+    color: red;
+}
+/* 选择首先是section 然后 具有class属性 并且属性值 必须是 data结尾的这些元素 */
+section[class$=data] {
+    color: blue;
+}
+```
+
+- 属性选择器，按照字面意思，都是根据标签中的属性来选择元素
+- 属性选择器可以根据元素特定属性的来选择元素。 这样就可以不用借助于类或者id选择器
+- 属性选择器也可以选择出来自定义的属性
+- **注意：**类选择器、属性选择器、伪类选择器，权重为 10。
+
+### 结构伪类选择器
+
+结构伪类选择器主要根据文档结构来选择器元素， 常用于根据父级选择器里面的子元素
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\结构伪类选择器-01.png)
+
+#### E:first-child
+
+匹配父元素的第一个子元素E
+
+```html
+ <style>
+    ul li:first-child{
+      background-color: red;
+    }
+  </style>
+
+  <ul>
+    <li>列表项一</li>
+    <li>列表项二</li>
+    <li>列表项三</li>
+    <li>列表项四</li>
+  </ul>
+```
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\first-child.png)
+
+**E:last-child**  则是选择到了最后一个li标签
+
+#### E:nth-child(n)（★★★）
+
+匹配到父元素的第n个元素
+
+- 匹配到父元素的第2个子元素  
+
+  `ul li:nth-child(2){}`
+
+- 匹配到父元素的序号为奇数的子元素
+
+  `ul li:nth-child(odd){}`    **odd** 是关键字  奇数的意思（3个字母 ）
+
+- 匹配到父元素的序号为偶数的子元素
+
+  `ul li:nth-child(even){}`   **even**（4个字母 ）
+
+- **匹配到父元素的前3个子元素**
+
+  `ul li:nth-child(-n+3){}`    
+
+  选择器中的  **n** 是怎么变化的呢？
+
+  因为 n是从 0 ，1，2，3.. 一直递增
+
+  所以 -n+3 就变成了   
+
+  - n=0 时   -0+3=3
+  - n=1时    -1+3=2
+  - n=2时    -2+3=1
+  - n=3时    -3+3=0 
+  - ...
+
+**一些常用的公式： 公式不是死的，在这里列举出来让大家能够找寻到这个模式，能够理解代码，这样才能写出满足自己功能需求的代码**
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\nth-child公式.png)
+
+**常用的结构伪类选择器是：** `nth-child(n) {...}`
+
+#### E:nth-child 与 E:nth-of-type 的区别
+
+这里只讲明  **E:nth-child(n)**  和 **E:nth-of-type(n)**  的区别  剩下的 **E:first-of-type**     **E:last-of-type**  **E:nth-last-of-type(n)**   同理做推导即可
+
+```html
+<style>
+    ul li:nth-child(2){
+      /* 字体变成红色 */
+        color: red;
+    }
+
+    ul li:nth-of-type(2){
+      /* 背景变成绿色 */
+      background-color: green;
+    }
+  </style>
+
+
+  <ul>
+    <li>列表项一</li>
+    <p>乱来的p标签</p>
+    <li>列表项二</li>
+    <li>列表项三</li>
+    <li>列表项四</li>
+  </ul>
+```
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\nth-child与nth-of-type区别.png)
+
+也就是说：
+
+- `E:nth-child(n)`     匹配父元素的第n个子元素E，也就是说，nth-child 对父元素里面所有孩子排序选择（序号是固定的）  先找到第n个孩子，然后看看是否和E匹配
+- `E:nth-of-type(n)` 匹配同类型中的第n个同级兄弟元素E，也就是说，对父元素里面指定子元素进行排序选择。 先去匹配E ，然后再根据E 找第n个孩子
+
+#### 小结
+
+- 结构伪类选择器一般用于选择父级里面的第几个孩子
+- nth-child 对父元素里面所有孩子排序选择（序号是固定的）  先找到第n个孩子，然后看看是否和E匹配
+- nth-of-type 对父元素里面指定子元素进行排序选择。 先去匹配E ，然后再根据E 找第n个孩子
+- 关于 nth-child（n） 我们要知道 n 是从 0 开始计算的，要记住常用的公式
+- 如果是无序列表，我们肯定用 nth-child 更多
+- 类选择器、属性选择器、伪类选择器，权重为 10
+
+### 伪元素选择器（★★★）
+
+伪元素选择器可以帮助我们利用CSS创建新标签元素，而不需要HTML标签，从而简化HTML结构
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\伪元素.png)
+
+**示例demo**
+
+```html
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+    /* div::before 权重是2 */
+    div::before {
+        /* 这个content是必须要写的 */
+        content: '我';
+    }
+    div::after {
+        content: '小猪佩奇';
+    }
+</style>
+<body>
+    <div>
+        是
+    </div>
+</body>
+```
+
+注意：
+
+- before 和 after 创建一个元素，但是属于行内元素
+- 新创建的这个元素在文档树中是找不到的，所以我们称为伪元素
+- 语法：  element::before {}   
+- before 和 after 必须有 content 属性 
+- before 在父元素内容的前面创建元素，after 在父元素内容的后面插入元素
+  伪元素选择器和标签选择器一样，权重为 1
+
+#### 应用场景一： 字体图标
+
+在实际工作中，字体图标基本上都是用伪元素来实现的，好处在于我们不需要在结构中额外去定义字体图标的标签，通过content属性来设置字体图标的 编码
+
+**步骤：**
+
+- 结构中定义div盒子
+- 在style中先申明字体  @font-face
+- 在style中定义after伪元素 div::after{...}
+- 在after伪元素中 设置content属性，属性的值就是字体编码
+- 在after伪元素中 设置font-family的属性
+- 利用定位的方式，让伪元素定位到相应的位置；记住定位口诀：子绝父相
+
+```html
+<head>
+    ...
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?1lv3na');
+            src: url('fonts/icomoon.eot?1lv3na#iefix') format('embedded-opentype'),
+                url('fonts/icomoon.ttf?1lv3na') format('truetype'),
+                url('fonts/icomoon.woff?1lv3na') format('woff'),
+                url('fonts/icomoon.svg?1lv3na#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+        div {
+            position: relative;
+            width: 200px;
+            height: 35px;
+            border: 1px solid red;
+        }
+
+        div::after {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-family: 'icomoon';
+            /* content: ''; */
+            content: '\e91e';
+            color: red;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+```
+
+
+
+#### 应用场景二： 仿土豆效果
+
+把之前的代码进行了改善
+
+**步骤：**
+
+- 找到之前写过的仿土豆的结构和样式，拷贝到自己的页面中
+- 删除之前的mask遮罩
+- 在style中，给大的div盒子（类名叫tudou的），设置 before伪元素
+- 这个伪元素充当的是遮罩的角色，所以我们不用设置内容，但是需要设置content属性，属性的值为空字符串
+- 给这个遮罩设置宽高，背景颜色，默认是隐藏的
+- 当鼠标移入到 div盒子时候，让遮罩显示，利用 hover 来实现
+
+```html
+<head>
+    ...
+    <style>
+        .tudou {
+            position: relative;
+            width: 444px;
+            height: 320px;
+            background-color: pink;
+            margin: 30px auto;
+        }
+
+        .tudou img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .tudou::before {
+            content: '';
+            /* 隐藏遮罩层 */
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .4) url(images/arr.png) no-repeat center;
+        }
+
+        /* 当我们鼠标经过了 土豆这个盒子，就让里面before遮罩层显示出来 */
+        .tudou:hover::before {
+            /* 而是显示元素 */
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tudou">
+        <img src="images/tudou.jpg" alt="">
+    </div>
+    <div class="tudou">
+        <img src="images/tudou.jpg" alt="">
+    </div>
+    <div class="tudou">
+        <img src="images/tudou.jpg" alt="">
+    </div>
+    <div class="tudou">
+        <img src="images/tudou.jpg" alt="">
+    </div>
+</body>
+```
+
+#### 应用场景三： 清除浮动
+
+回忆一下清除浮动的方式：
+
+- 额外标签法也称为隔墙法，是 W3C 推荐的做法。
+- 父级添加 overflow 属性
+- 父级添加after伪元素
+- 父级添加双伪元素
+
+**额外标签法**也称为隔墙法，是 W3C 推荐的做法
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\额外标签法.png)
+
+**注意：** 要求这个新的空标签必须是块级元素
+
+后面两种伪元素清除浮动算是第一种额外标签法的一个**升级**和**优化**
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\单伪元素.png)
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\双伪元素.png)
+
+## 盒子模型（★★★）
+
+CSS3 中可以通过 box-sizing 来指定盒模型，有2个值：即可指定为 content-box、border-box，这样我们计算盒子大小的方式就发生了改变
+
+可以分成两种情况：
+
+- box-sizing: content-box  盒子大小为 width + padding + border  （以前默认的）
+- box-sizing: border-box  盒子大小为 width
+
+如果盒子模型我们改为了box-sizing: border-box  ， 那padding和border就不会撑大盒子了（前提padding和border不会超过width宽度）
+
+## 其他特性（★）
+
+### 图标变模糊  -- CSS3滤镜filter
+
+filter CSS属性将模糊或颜色偏移等图形效果应用于元素
+
+语法：
+
+```css
+filter:   函数(); -->  例如： filter: blur(5px);  -->  blur模糊处理  数值越大越模糊
+```
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\filter.png)
+
+### 计算盒子宽度 -- calc 函数
+
+calc() 此CSS函数让你在声明CSS属性值时执行一些计算
+
+语法：
+
+```css
+width: calc(100% - 80px);
+```
+
+括号里面可以使用 + - *  / 来进行计算
+
+## CSS3 过渡（★★★）
+
+过渡（transition)是CSS3中具有颠覆性的特征之一，我们可以在不使用 Flash 动画或 JavaScript 的情况下，当元素从一种样式变换为另一种样式时为元素添加效果。
+
+**过渡动画：** 是从一个状态 渐渐的过渡到另外一个状态
+
+可以让我们页面更好看，更动感十足，虽然 低版本浏览器不支持（ie9以下版本） 但是不会影响页面布局。
+
+我们现在经常和 :hover 一起 搭配使用。
+
+语法：
+
+```css
+transition: 要过渡的属性  花费时间  运动曲线  何时开始;
+```
+
+- 属性 ： 想要变化的 css 属性， 宽度高度 背景颜色 内外边距都可以 。如果想要所有的属性都变化过渡， 写一个all 就可以
+- 花费时间： 单位是 秒（必须写单位） 比如 0.5s 
+- 运动曲线： 默认是 ease （可以省略）
+- 何时开始：单位是 秒（必须写单位）可以设置延迟触发时间  默认是 0s  （可以省略）
+- **后面两个属性可以省略**
+- **记住过渡的使用口诀： 谁做过渡给谁加**
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\运动曲线.png)
+
+#### 过渡练习
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\进度条.png)
+
+步骤：
+
+- 创建两个div的盒子，属于的嵌套关系，外层类名叫 bar，里层类名叫 bar_in
+- 给外层的bar 这个盒子设置边框，宽高，圆角边框
+- 给里层的bar_in  设置 初试的宽度，背景颜色，过渡效果
+- 给外层的 bar 添加 hover事件，当触发了hover事件 让里层的bar_in 来进行宽度的变化
+
+代码：
+
+```html
+<head>
+    ...
+    <style>
+        .bar {
+            width: 150px;
+            height: 15px;
+            border: 1px solid red;
+            border-radius: 7px;
+            padding: 1px;
+        }
+        .bar_in {
+            width: 50%;
+            height: 100%;
+            background-color: red;
+            /* 谁做过渡给谁加 */
+            transition: all .7s;
+        }
+        .bar:hover .bar_in {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="bar">
+        <div class="bar_in"></div>
+    </div>
+</body>
+```
+
+# 广义H5说法 了解
+
+### 狭隘H5
+
+![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\广义H5.png)
+
+### 广义H5
+
+- 广义的 HTML5 是 HTML5 本身 + CSS3 + JavaScript 。
+- 这个集合有时称为 HTML5 和朋友，通常缩写为 HTML5 。
+- 虽然 HTML5 的一些特性仍然不被某些浏览器支持，但是它是一种发展趋势。
+- HTML5 MDN 介绍：
+  https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML
