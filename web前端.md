@@ -2064,8 +2064,6 @@ border-radius: 左上角 右上角  右下角  左下角;
 
 3. 一般情况下精灵图都是**负值**。（千万注意网页中的坐标： x轴右边走是正值，左边走是负值， y轴同理。）
 
-### 1.3 案例：拼出自己名字
-
 ## 2. 字体图标
 
 ### 2.1 字体图标的产生
@@ -2122,7 +2120,7 @@ IcoMoon 成立于 2011 年，推出了第一个自定义图标字体生成器，
 
 - **阿里** **iconfont** **字库**   http://www.iconfont.cn/   推荐指数   **★★★★★** 
 
-这个是阿里妈妈 M2UX 的一个 iconfont 字体图标字库，包含了淘宝图标库和阿里妈妈图标库。可以使用 AI制作图标上传生成。 重点是，免费！
+免费！
 
 ### **2.4** **字体图标的引入**
 
@@ -2168,7 +2166,7 @@ IcoMoon 成立于 2011 年，推出了第一个自定义图标字体生成器，
 
 3. html 标签内添加小图标。
 
-![1571520411345](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571520411345.png)
+![1571520411345](https://raw.githubusercontent.com/vsauqin/image/133be197579513b4130da73ce05f240e0332da75/%E7%AC%AC%E4%B8%83%E5%A4%A9/1571520390923.png)
 
 4. 给标签定义字体。
 
@@ -2180,7 +2178,7 @@ IcoMoon 成立于 2011 年，推出了第一个自定义图标字体生成器，
 
   注意：务必保证 这个字体和上面@font-face里面的字体保持一致 
 
-  ![1571520485350](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571520485350.png)
+  ![1571520485350](https://raw.githubusercontent.com/vsauqin/image/133be197579513b4130da73ce05f240e0332da75/%E7%AC%AC%E4%B8%83%E5%A4%A9/1571520485350.png)
 
 ### 2.5 字体图标的追加
 
@@ -2188,11 +2186,7 @@ IcoMoon 成立于 2011 年，推出了第一个自定义图标字体生成器，
 
 把压缩包里面的 **selection.json** 从新上传，然后选中自己想要新的图标，从新下载压缩包，并替换原来的文件即可。
 
-![1571520554317](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571520554317.png)
-
-### 2.6 字体图标加载的原理：
-
-![1571520617270](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\字体图标加载的原理.gif)
+![1571520554317](https://raw.githubusercontent.com/vsauqin/image/133be197579513b4130da73ce05f240e0332da75/%E7%AC%AC%E4%B8%83%E5%A4%A9/1571520554317.png)
 
 ## 3. CSS 三角
 
@@ -2202,7 +2196,7 @@ IcoMoon 成立于 2011 年，推出了第一个自定义图标字体生成器，
 
 一张图， 你就知道 CSS 三角是怎么来的了, 做法如下：
 
-![1571520965966](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571520965966.png)
+![1571520965966](https://raw.githubusercontent.com/vsauqin/image/133be197579513b4130da73ce05f240e0332da75/%E7%AC%AC%E4%B8%83%E5%A4%A9/1571520965966.png)
 
 ```css
  div {
@@ -2215,75 +2209,10 @@ IcoMoon 成立于 2011 年，推出了第一个自定义图标字体生成器，
  }
 ```
 
-1. 我们用css 边框可以模拟三角效果
+1. 用css 边框可以模拟三角效果
 2. 宽度高度为0
 3. 我们4个边框都要写， 只保留需要的边框颜色，其余的不能省略，都改为 transparent 透明就好了
 4. 为了照顾兼容性 低版本的浏览器，加上 font-size: 0;  line-height: 0;
-
-### 3.2 案例：京东三角
-
-#### 3.2.1效果图
-
-![1571521183026](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571521183026.png)
-
-#### 3.2.2 代码参考
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CSS 三角制作</title>
-    <style>
-        .box1 {
-            width: 0;
-            height: 0;
-            /* border: 10px solid pink; */
-            border-top: 10px solid pink;
-            border-right: 10px solid red;
-            border-bottom: 10px solid blue;
-            border-left: 10px solid green;
-        }
-        .box2 {
-            width: 0;
-            height: 0;
-            border: 50px solid transparent;
-            border-left-color: pink;
-            margin: 100px auto;
-        }
-        .jd {
-            position: relative;
-            width: 120px;
-            height: 249px;
-            background-color: pink;
-        }
-        .jd span {
-            position: absolute;
-            right: 15px;
-            top: -10px;
-            width: 0;
-            height: 0;
-            /* 为了照顾兼容性 */
-            line-height: 0;  
-            font-size: 0;
-            border: 5px solid transparent;
-            border-bottom-color: pink;
-        }
-    </style>
-</head>
-<body>
-    <div class="box1"></div>
-    <div class="box2"></div>
-    <div class="jd">
-        <span></span>
-    </div>
-</body>
-</html>
-```
-
-
 
 ## 4. CSS 用户界面样式
 
@@ -2305,7 +2234,15 @@ IcoMoon 成立于 2011 年，推出了第一个自定义图标字体生成器，
 
 设置或检索在对象上移动的鼠标指针采用何种系统预定义的光标形状。
 
-![1571521805183](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571521805183.png)
+| 属性值      | 描述 |
+| ----------- | ---- |
+| default     | 默认 |
+| pointer     | 小手 |
+| move        | 移动 |
+| text        | 文本 |
+| not-allowed | 禁止 |
+
+
 
 ### 4.2 轮廓线 outline
 
@@ -2341,15 +2278,20 @@ CSS 的 **vertical-align** 属性使用场景： 经常用于设置图片或者�
 vertical-align : baseline | top | middle | bottom 
 ```
 
-![1571522023413](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522023413.png)
+| 值       | 描述                                     |
+| -------- | ---------------------------------------- |
+| baseline | 元素放置在父元素的基线上                 |
+| top      | 元素的顶端与行中的最高元素的顶端对齐     |
+| middle   | 把此元素放置在父元素的中部               |
+| bottom   | 把元素的顶端与行中的最低的元素的顶端对齐 |
 
-![1571522040645](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522040645.png)
+![1571522040645](https://raw.githubusercontent.com/vsauqin/image/133be197579513b4130da73ce05f240e0332da75/%E7%AC%AC%E4%B8%83%E5%A4%A9/1571522040645.png)
 
 ### **5.1** **图片、表单和文字对齐**
 
 图片、表单都属于行内块元素，默认的 vertical-align 是基线对齐。
 
-![1571522093729](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522093729.png)
+![1571522093729](https://raw.githubusercontent.com/vsauqin/image/133be197579513b4130da73ce05f240e0332da75/%E7%AC%AC%E4%B8%83%E5%A4%A9/1571522093729.png)
 
 此时可以给图片、表单这些行内块元素的 **vertical-align 属性设置为 middle** 就可以让文字和图片垂直居中对齐了。
 
@@ -2363,15 +2305,9 @@ bug：图片底侧会有一个空白缝隙，原因是行内块元素会和文�
 
 2.把图片转换为块级元素  **display: block**; 
 
-![1571522162225](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522162225.png)
-
-
-
 ## 6. 溢出的文字省略号显示
 
 ### 6.1 单行文本溢出显示省略号
-
-![1571522317809](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522317809.png)
 
 单行文本溢出显示省略号--必须满足三个条件：
 
@@ -2389,10 +2325,6 @@ bug：图片底侧会有一个空白缝隙，原因是行内块元素会和文�
 
 
 ### 6.2 多行文本溢出显示省略号（了解）
-
-![1571522334591](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522334591.png)
-
-
 
 多行文本溢出显示省略号，**有较大兼容性问题**，适合于webKit浏览器或移动端（移动端大部分是webkit内核）
 
@@ -2428,9 +2360,9 @@ display: -webkit-box;
 
 ### 7.1. margin负值运用
 
-![1571522666082](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522666082.png)
+![1571522666082](https://raw.githubusercontent.com/vsauqin/image/133be197579513b4130da73ce05f240e0332da75/%E7%AC%AC%E4%B8%83%E5%A4%A9/1571522666082.png)
 
-![1571522683897](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522683897.png)
+![1571522683897](https://raw.githubusercontent.com/vsauqin/image/133be197579513b4130da73ce05f240e0332da75/%E7%AC%AC%E4%B8%83%E5%A4%A9/1571522683897.png)
 
 1.让每个盒子margin 往左侧移动 -1px 正好压住相邻盒子边框
 
@@ -2438,36 +2370,28 @@ display: -webkit-box;
 
 ### 7.2 文字围绕浮动元素
 
-**效果**
-
-![1571522777745](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522777745.png)
-
-**布局示意图**
-
-![1571522761996](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522761996.png)
-
 **巧妙运用浮动元素不会压住文字的特性**
 
 ### 7.3 行内块巧妙运用
 
-![1571522898744](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522898744.png)
+![1571522898744](https://raw.githubusercontent.com/vsauqin/image/133be197579513b4130da73ce05f240e0332da75/%E7%AC%AC%E4%B8%83%E5%A4%A9/1571522898744.png)
 
 页码在页面中间显示:
 
 1. 把这些链接盒子转换为行内块， 之后给父级指定  text-align:center;
 2. 利用行内块元素中间有缝隙，并且给父级添加 text-align:center; 行内块元素会水平会居中
 
-![1571522910580](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571522910580.png)
+![1571522910580](https://raw.githubusercontent.com/vsauqin/image/133be197579513b4130da73ce05f240e0332da75/%E7%AC%AC%E4%B8%83%E5%A4%A9/1571522910580.png)
 
 ### 7.4. CSS 三角强化 案例
 
 #### **7.4.1 原理**
 
-![1571550959181](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571550959181.png)
+![1571550959181](https://raw.githubusercontent.com/vsauqin/image/133be197579513b4130da73ce05f240e0332da75/%E7%AC%AC%E4%B8%83%E5%A4%A9/1571523024087.png)
 
-![1571551000391](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571551000391.png)
+![1571551000391](https://raw.githubusercontent.com/vsauqin/image/133be197579513b4130da73ce05f240e0332da75/%E7%AC%AC%E4%B8%83%E5%A4%A9/1571550898114.png)
 
-![1571548058053](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571548058053.png)
+![1571548058053](https://raw.githubusercontent.com/vsauqin/image/133be197579513b4130da73ce05f240e0332da75/%E7%AC%AC%E4%B8%83%E5%A4%A9/1571548058053.png)
 
 
 
@@ -2501,7 +2425,7 @@ display: -webkit-box;
 
 #### 7.4.2 案例效果
 
-![1571548099631](E:\pink前端基础带资料\基础部分\09-前端基础CSS第七天\笔记\images\1571548099631.png)
+![1571548099631](https://raw.githubusercontent.com/vsauqin/image/133be197579513b4130da73ce05f240e0332da75/%E7%AC%AC%E4%B8%83%E5%A4%A9/1571522998580.png)
 
 #### **7.4.3 代码参考**
 
@@ -2618,8 +2542,6 @@ HTML5 的新增特性主要是针对于以前的不足，增加了一些新的�
 
 因为多媒体标签的 属性、方法、事件比较多，因此我们需要什么功能的时候，就需要去查找相关的文档进行学习使用。
 
-![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\多媒体标签.png)
-
 ### 视频标签- video（★★★）
 
 #### 基本使用
@@ -2631,8 +2553,6 @@ HTML5 的新增特性主要是针对于以前的不足，增加了一些新的�
 ```html
  <video src="media/mi.mp4"></video>
 ```
-
-![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\video支持格式.png)
 
 #### 兼容写法
 
@@ -2650,7 +2570,17 @@ HTML5 的新增特性主要是针对于以前的不足，增加了一些新的�
 
 #### video 常用属性
 
-![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\video常用属性.png)
+| 属性     | 值                           | 描述                                             |
+| -------- | ---------------------------- | ------------------------------------------------ |
+| autoply  |                              | 自动播放                                         |
+| controls |                              | 显示播放控件                                     |
+| width    |                              | 播放器宽度                                       |
+| height   |                              | 高度                                             |
+| loop     |                              | 循环播放                                         |
+| preload  | auto预先加载视频；none不加载 | 规定是否预加载视频，已经有autoplay属性忽略该属性 |
+| src      |                              |                                                  |
+| poster   | imgurl                       | 加载等待的画面图片                               |
+| muted    |                              | 静音播放                                         |
 
 **属性很多，有一些属性需要大家重点掌握：**
 
@@ -2680,8 +2610,6 @@ HTML5 的新增特性主要是针对于以前的不足，增加了一些新的�
 <audio src="media/music.mp3"></audio>
 ```
 
-![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\audio支持格式.png)
-
 #### 兼容写法
 
 由于各个浏览器的支持情况不同，所以我们会有一种兼容性的写法，这种写法了解一下即可
@@ -2698,7 +2626,7 @@ HTML5 的新增特性主要是针对于以前的不足，增加了一些新的�
 
 #### audio 常用属性
 
-![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\audio常用属性.png)
+![你好](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\audio常用属性.png)
 
 **示例代码：**
 
@@ -2719,8 +2647,6 @@ HTML5 的新增特性主要是针对于以前的不足，增加了一些新的�
 在H5中，帮我们新增加了很多类型的表单，这样方便了程序员的开发
 
 **课堂案例：在这个案例中，熟练了新增表单的用法**
-
-![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\input案例.png)
 
 **案例代码：**
 
@@ -2750,7 +2676,7 @@ text password radio checkbox button file hidden submit reset image
 
 **新的输入类型**
 
-![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\新增input表单.png)
+![](https://raw.githubusercontent.com/vsauqin/image/736a2ef5026cd1ff285c70b5ec897914abb04795/%E6%8F%90%E9%AB%98/video%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7.png)
 
 类型很多，我们现阶段**重点记忆三个**： **`number`   `tel`   `search`**
 
@@ -2776,7 +2702,7 @@ CSS3 给我们新增了选择器，可以更加便捷，更加自由的选择目
 
 属性选择器，按照字面意思，都是根据标签中的属性来选择元素
 
-![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\属性选择器.png)
+![](https://raw.githubusercontent.com/vsauqin/image/736a2ef5026cd1ff285c70b5ec897914abb04795/%E6%8F%90%E9%AB%98/%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8.png)
 
 **示例代码：**
 
@@ -2804,7 +2730,7 @@ section[class$=data] {
 
 结构伪类选择器主要根据文档结构来选择器元素， 常用于根据父级选择器里面的子元素
 
-![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\结构伪类选择器-01.png)
+![](https://raw.githubusercontent.com/vsauqin/image/736a2ef5026cd1ff285c70b5ec897914abb04795/%E6%8F%90%E9%AB%98/%E7%BB%93%E6%9E%84%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8-01.png)
 
 #### E:first-child
 
@@ -2824,8 +2750,6 @@ section[class$=data] {
     <li>列表项四</li>
   </ul>
 ```
-
-![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\first-child.png)
 
 **E:last-child**  则是选择到了最后一个li标签
 
@@ -2894,8 +2818,6 @@ section[class$=data] {
   </ul>
 ```
 
-![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\nth-child与nth-of-type区别.png)
-
 也就是说：
 
 - `E:nth-child(n)`     匹配父元素的第n个子元素E，也就是说，nth-child 对父元素里面所有孩子排序选择（序号是固定的）  先找到第n个孩子，然后看看是否和E匹配
@@ -2914,7 +2836,10 @@ section[class$=data] {
 
 伪元素选择器可以帮助我们利用CSS创建新标签元素，而不需要HTML标签，从而简化HTML结构
 
-![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\伪元素.png)
+| 选择符   | 简介               |
+| -------- | ------------------ |
+| ::before | 在元素前面插入内容 |
+| ::after  | 在元素后面插入内容 |
 
 **示例demo**
 
@@ -3196,16 +3121,3 @@ transition: 要过渡的属性  花费时间  运动曲线  何时开始;
 </body>
 ```
 
-# 广义H5说法 了解
-
-### 狭隘H5
-
-![](E:\pink前端基础带资料\基础部分\10-前端基础-HTML5CSS3提高\笔记\images\广义H5.png)
-
-### 广义H5
-
-- 广义的 HTML5 是 HTML5 本身 + CSS3 + JavaScript 。
-- 这个集合有时称为 HTML5 和朋友，通常缩写为 HTML5 。
-- 虽然 HTML5 的一些特性仍然不被某些浏览器支持，但是它是一种发展趋势。
-- HTML5 MDN 介绍：
-  https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML
