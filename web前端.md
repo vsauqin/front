@@ -2956,3 +2956,16 @@ animation：动画名称 持续时间 运动曲线 何时开始 播放次数 是
 animation: myfirst 5s linear 2s infinite alternate;
 ```
 
+### 速度曲线细节
+
+animation-timing-function：规定动画的速度曲线
+
+| 值          | 描述                 |
+| ----------- | -------------------- |
+| linear      | 匀速                 |
+| ease        | 快慢快               |
+| ease-in     | 从低速开始           |
+| ease-out    | 以低速结束           |
+| ease-in-out | 以低速开始并结束     |
+| steps（）   | 指定函数中的间隔数量 |
+

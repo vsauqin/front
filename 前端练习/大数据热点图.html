@@ -20,50 +20,76 @@
 
         .city {
             position: absolute;
-            top: 227px;
+            top: 231px;
             right: 202px;
+            color: #fff;
         }
 
-        .city2 {
+        .taibei {
             position: absolute;
-            top: 490px;
-            left: 650px;
+            top: 498px;
+            right: 85px;
         }
 
-        .city3 {
+        .guangzhou {
             position: absolute;
-            top: 535px;
-            left: 540px;
+            top: 542px;
+            right: 200px;
         }
 
         .dotted {
+            width: 8px;
+            height: 8px;
+            background-color: #09f;
+            border-radius: 50%;
+        }
+
+        /* .r1 {
             position: absolute;
 
             width: 8px;
             height: 8px;
             background-color: skyblue;
             border-radius: 50%;
-        }
-
-        .r1 {
-            position: absolute;
-
-            width: 8px;
-            height: 8px;
-            background-color: skyblue;
-            border-radius: 50%;
-        }
+        } */
 
         .city div[class^="r"] {
             position: absolute;
             top: 50%;
             left: 50%;
-            /* transform: translate(-50%, -50%); */
+            transform: translate(-50%, -50%);
             width: 8px;
             height: 8px;
             box-shadow: 0 0 12px #009dfd;
-            background-color: #009dfd;
+            /* background-color: #009dfd; */
             border-radius: 50%;
+            animation: puzzle 1.2s linear infinite;
+        }
+
+        .city div.r2 {
+            animation-delay: 0.4s;
+        }
+
+        .city div.r3 {
+            animation-delay: 0.8s;
+        }
+
+        @keyframes puzzle {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                width: 40px;
+                height: 40px;
+                opacity: 1;
+            }
+
+            100% {
+                width: 80px;
+                height: 80px;
+                opacity: 0;
+            }
         }
     </style>
 </head>
@@ -71,7 +97,13 @@
 <body>
     <div class="map">
 
-        <div class="city">
+        <div class="city beijing">
+            <div class="dotted"></div>
+            <div class="r1"></div>
+            <div class="r2"></div>
+            <div class="r3"></div>
+        </div>
+        <div class="city taibei">
             <div class="dotted">
 
             </div>
@@ -79,11 +111,13 @@
             <div class="r2"></div>
             <div class="r3"></div>
         </div>
-        <div class="city2">
-            2
-        </div>
-        <div class="city3">
-            3
+        <div class="city guangzhou">
+            <div class="dotted">
+
+            </div>
+            <div class="r1"></div>
+            <div class="r2"></div>
+            <div class="r3"></div>
         </div>
     </div>
 </body>
