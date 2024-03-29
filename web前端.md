@@ -2969,3 +2969,62 @@ animation-timing-function：规定动画的速度曲线
 | ease-in-out | 以低速开始并结束     |
 | steps（）   | 指定函数中的间隔数量 |
 
+## 3D转换
+
+### 3D移动translate3d
+
+- translform:translateX(100px)：仅仅是在x轴上移动
+
+
+
+- translform:translateY(100px)：仅仅是在Y轴上移动
+
+
+
+- translform:translateZ(100px)：仅仅是在Z轴上移动（注意：translateZ一般用px单位）
+
+​		translateZ：近大远小
+
+​		translateZ：往外是正值
+
+​		translateZ：往里是负值
+
+- transform:translate3d(x,y,z)：其中 x、y、z 分别指要移动的轴的方向的距离
+
+### 透视perspective
+
+距离视觉点越近的在电脑平面成像越大，越远成像越小
+
+
+
+透视的单位是像素
+
+### 3d旋转transform:rotate3d(x,y,z,deg)
+
+**transform:rotate3d(x,y,z,deg)**
+
+- transform:rotate3d(1,0,0,45deg) 就是沿着x轴旋转 45deg
+
+- transform:rotate3d(1,1,0,45deg) 就是沿着对角线旋转 45deg
+
+###  3D呈现transfrom-style
+
+
+
+- 控制子元素是否开启三维立体环境。。
+
+
+
+- transform-style: flat 子元素不开启3d立体空间 默认的
+
+
+
+- transform-style: preserve-3d; 子元素开启立体空间
+
+
+
+- 代码写给父级，但是影响的是子盒子
+
+
+
+- 这个属性很重要，后面必用
