@@ -3607,5 +3607,9 @@ JavaScript 中的数值类型与数学中的数字是一样的，分为正数、
 </html>
 ```
 
+#### ParseInt
+
+#### parseFloat
+
 
 
