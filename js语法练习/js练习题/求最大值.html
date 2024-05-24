@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function max(a, b) {
+            return a > b ? a : b
+        }
+        console.log(max(1, 2))
+
+        //求任意数组的最大值并返回
+        function maxArr(arr = []) {
+            return arr.length ? arr.reduce((a, b) => a > b ? a : b) : undefined
+        }
+        console.log(maxArr([1, 2, 3, 4, 5]))
+    </script>
+</body>
+
+</html>
