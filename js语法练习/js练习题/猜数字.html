@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //let num = Math.floor(Math.random() * 10) + 1;
+        function getRandomInt(min, max) {
+            let num = Math.floor(Math.random() * (max - min + 1)) + min;
+            return num;
+        }
+        let num = getRandomInt(1, 10);
+        console.log(num);
+
+
+        while (true) {
+            let guess = parseInt(prompt("请输入一个1-10之间的数字"));
+            if (guess == num) {
+                alert("恭喜你猜对了");
+                break;
+            } else if (guess > num) {
+                alert("你猜的数字太大了");
+            } else {
+                alert("你猜的数字太小了");
+            }
+        }
+        //guess = parseInt(prompt("猜错了，请重新输入一个1-10之间的数字"));
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let sec = +prompt('请输入秒数')
+        function timeConversion(t) {
+            // Write your code here
+            let h = Math.floor(sec / 3600)
+            let m = Math.floor((sec % 3600) / 60)
+            let s = sec % 60
+            h < 10 ? h = '0' + h : h
+            m < 10 ? m = '0' + m : m
+            s < 10 ? s = '0' + s : s
+            console.log(`${h}:${m}:${s}`)
+        }
+        timeConversion(sec)
+    </script>
+</body>
+
+</html>
