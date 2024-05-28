@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button disabled>用户注册协议(30)</button>
+    <script>
+        const btn = document.querySelector('button');
+        let s = 5
+        let n = setInterval(() => {
+
+            s--;
+            btn.innerHTML = `用户注册协议(${s})`;
+            if (s === 0) {
+                btn.disabled = false;
+                clearInterval(n);
+                btn.innerHTML = '用户注册协议';
+                return;
+            }
+
+
+
+            //btn.disabled = false;
+        }, 1000)
+    </script>
+</body>
+
+</html>
