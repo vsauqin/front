@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>轮播图点击切换</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .slider {
+      width: 560px;
+      height: 400px;
+      overflow: hidden;
+    }
+
+    .slider-wrapper {
+      width: 100%;
+      height: 320px;
+    }
+
+    .slider-wrapper img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .slider-footer {
+      height: 80px;
+      background-color: rgb(100, 67, 68);
+      padding: 12px 12px 0 12px;
+      position: relative;
+    }
+
+    .slider-footer .toggle {
+      position: absolute;
+      right: 0;
+      top: 12px;
+      display: flex;
+    }
+
+    .slider-footer .toggle button {
+      margin-right: 12px;
+      width: 28px;
+      height: 28px;
+      appearance: none;
+      border: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .slider-footer .toggle button:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .slider-footer p {
+      margin: 0;
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .slider-indicator {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .slider-indicator li {
+      width: 8px;
+      height: 8px;
+      margin: 4px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0.4;
+      cursor: pointer;
+    }
+
+    .slider-indicator li.active {
+      width: 12px;
+      height: 12px;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slider">
+    <div class="slider-wrapper">
+      <img src="./images/slider01.jpg" alt="" />
+    </div>
+    <div class="slider-footer">
+      <p>对人类来说会不会太超前了？</p>
+      <ul class="slider-indicator">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="toggle">
+        <button class="prev">&lt;</button>
+        <button class="next">&gt;</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    // 1. 初始数据
+    const sliderData = [
+      { url: './images/slider01.jpg', title: '对人类来说会不会太超前了？', color: 'rgb(100, 67, 68)' },
+      { url: './images/slider02.jpg', title: '开启剑与雪的黑暗传说！', color: 'rgb(43, 35, 26)' },
+      { url: './images/slider03.jpg', title: '真正的jo厨出现了！', color: 'rgb(36, 31, 33)' },
+      { url: './images/slider04.jpg', title: '李玉刚：让世界通过B站看到东方大国文化', color: 'rgb(139, 98, 66)' },
+      { url: './images/slider05.jpg', title: '快来分享你的寒假日常吧~', color: 'rgb(67, 90, 92)' },
+      { url: './images/slider06.jpg', title: '哔哩哔哩小年YEAH', color: 'rgb(166, 131, 143)' },
+      { url: './images/slider07.jpg', title: '一站式解决你的电脑配置问题！！！', color: 'rgb(53, 29, 25)' },
+      { url: './images/slider08.jpg', title: '谁不想和小猫咪贴贴呢！', color: 'rgb(99, 72, 114)' },
+    ]
+    //获取图片对象
+    const img = document.querySelector('img')
+    //获取标题对象
+    const title = document.querySelector('p')
+    //获取背景颜色对象
+    const bgc = document.querySelector('.slider-footer')
+    //获取按钮对象
+    const prev = document.querySelector('.prev')
+    const next = document.querySelector('.next')
+    //添加点击事件
+    const random = 0
+    let index1 = 7
+    let index2 = 0
+
+
+    next.addEventListener('click', function () {
+      index2++
+      if (index2 >= sliderData.length) {
+        index2 = 0
+      }
+      img.src = sliderData[index2].url
+      title.innerText = sliderData[index2].title
+      bgc.style.backgroundColor = sliderData[index2].color
+      const dot1 = document.querySelector(`.slider-indicator li:nth-child(${index2 + 1})`)
+      const dot2 = document.querySelector(`.slider-indicator .active`)
+      dot2.classList.remove('active')
+      dot1.classList.add('active')
+    })
+
+
+    prev.addEventListener('click', function () {
+      index2--
+      if (index2 < 0) {
+        index2 = sliderData.length - 1
+      }
+      //random = Math.floor(Math.random() * 8)
+      img.src = sliderData[index2].url
+      title.innerText = sliderData[index2].title
+      bgc.style.backgroundColor = sliderData[index2].color
+      document.querySelector(`.slider-indicator .active`).classList.remove('active')
+      document.querySelector(`.slider-indicator li:nth-child(${index2 + 1})`).classList.add('active')
+    }
+    )
+    // next.addEventListener('click', function () {
+    //   index2++
+    //   if (index2 >= sliderData.length) {
+    //     index2 = 0
+    //   }
+    //   img.src = sliderData[index2].url
+    //   title.innerText = sliderData[index2].title
+    //   bgc.style.backgroundColor = sliderData[index2].color
+    //   const dot1 = document.querySelector(`.slider-indicator li:nth-child(${index2 + 1})`)
+    //   const dot2 = document.querySelector(`.slider-indicator .active`)
+    //   dot2.classList.remove('active')
+    //   dot1.classList.add('active')
+    // }) 
+    let timer = setInterval(function () {
+      next.click()
+    }, 1000)
+    const slider = document.querySelector('.slider')
+    slider.addEventListener('mouseenter', function () {
+      clearInterval(timer)
+    })
+    slider.addEventListener('mouseleave', function () {
+      timer = setInterval(function () {
+        next.click()
+      }, 1000)
+    })
+    const dots = document.querySelectorAll('.slider-indicator li')
+    dots.forEach(function (dot, index) {
+      dot.addEventListener('click', function () {
+        const activeDot = document.querySelector('.slider-indicator .active')
+        activeDot.classList.remove('active')
+        dot.classList.add('active')
+        img.src = sliderData[index].url
+        title.innerText = sliderData[index].title
+        bgc.style.backgroundColor = sliderData[index].color
+
+      })
+    })
+  </script>
+</body>
+
+</html>
