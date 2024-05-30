@@ -74,11 +74,11 @@
     <div class="tab-nav">
       <h3>每日特价</h3>
       <ul>
-        <li><a class="active" href="javascript:;">精选</a></li>
-        <li><a href="javascript:;">美食</a></li>
-        <li><a href="javascript:;">百货</a></li>
-        <li><a href="javascript:;">个护</a></li>
-        <li><a href="javascript:;">预告</a></li>
+        <li><a class="active" href="javascript:;" data-id="1">精选</a></li>
+        <li><a href="javascript:;" data-id="2">美食</a></li>
+        <li><a href="javascript:;" data-id="3">百货</a></li>
+        <li><a href="javascript:;" data-id="4">个护</a></li>
+        <li><a href="javascript:;" data-id="5">预告</a></li>
       </ul>
     </div>
     <div class="tab-content">
@@ -89,7 +89,29 @@
       <div class="item"><img src="./images/tab04.png" alt="" /></div>
     </div>
   </div>
-
+  <script>
+    const ul = document.querySelector('.tab-nav ul')
+    const tab = document.querySelector('.tab-content')
+    ul.addEventListener('click', function (e) {
+      console.dir(e.target)
+      console.log(e)
+      console.log(e.target.dataset)
+      if (e.target.tagName === 'A') {
+        document.querySelector('.tab-nav ul li a.active').classList.remove('active');
+        e.target.classList.add('active')
+        document.querySelector('.tab-content .item.active').classList.remove('active')
+        document.querySelector(`.tab-content .item:nth-child(${e.target.dataset.id})`).classList.add('active')
+        //e.target.classList.add('active')
+      }
+    })
+    // ul.addEventListener('click', function (e) {
+    //   console.dir(e.target)
+    //   if (e.target.tagName === 'A') {
+    //     document.querySelector('.tab-content .item.active').classList.remove('active')
+    //     document.querySelector(`.tab-content .item:nth-child(${e.target.dataset.index})`).classList.add('active')
+    //   }
+    // })
+  </script>
 </body>
 
 </html>
