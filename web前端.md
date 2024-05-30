@@ -1472,7 +1472,7 @@ overflow:hidden | auto | scroll;
 
   3.必须添加 top 、left、right、bottom **其中一个**才有效
 
-  跟页面滚动搭配使用。 兼容性较差，IE 不支持。
+  跟页面滚动搭配使用。
 
   
 
