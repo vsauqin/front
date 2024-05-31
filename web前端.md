@@ -6013,6 +6013,16 @@ window.addEventListener('load', function() {
 })
 ~~~
 
+事件名：DOMContLoaded
+
+不需要监听页面所有资源加载完毕
+
+```
+document.addEventListener('DOMContLoaded',function(){})
+```
+
+
+
 ### 元素滚动事件
 
 滚动条在滚动的时候持续触发的事件

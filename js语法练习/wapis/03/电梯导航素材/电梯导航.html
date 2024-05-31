@@ -1214,7 +1214,18 @@
       <li><a href="javascript:;" id="backTop"><i class="sprites"></i>顶部</a></li>
     </ul>
   </div>
-
+  <script>
+    const elevator = document.querySelector('.xtx-elevator')
+    window.addEventListener('scroll', function () {
+      const n = document.documentElement.scrollTop
+      // if (n >= 300) {
+      //   elevator.style.opacity = 1
+      // } else {
+      //   elevator.style.opacity = 0
+      // }
+      n >= 300 ? elevator.style.opacity = 1 : elevator.style.opacity = 0
+    })
+  </script>
 </body>
 
 </html>
