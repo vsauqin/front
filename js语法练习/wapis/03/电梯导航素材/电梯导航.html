@@ -1225,6 +1225,10 @@
       // }
       n >= 300 ? elevator.style.opacity = 1 : elevator.style.opacity = 0
     })
+    const backtop = document.querySelector('#backTop')
+    backtop.addEventListener('click', function () {
+      document.documentElement.scrollTop = 0
+    })
   </script>
 </body>
 
