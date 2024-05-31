@@ -50,20 +50,28 @@
         我里面有很多文字
     </div>
     <script>
-        const div = document.querySelector('div')
-        div.addEventListener('scroll', function (e) {
-            //console.log(div.scrollTop)
-            //console.log(document.documentElement.scrollTop)
-        })
-        window.addEventListener('scroll', function () {
-            console.log(document.documentElement.scrollTop)
-            const n = document.documentElement.scrollTop
-            if (n >= 100) {
-                div.style.display = 'block'
-            } else {
-                div.style.display = 'none'
-            }
-        })
+        // const div = document.querySelector('div')
+        // div.addEventListener('scroll', function (e) {
+        //     //console.log(div.scrollTop)
+        //     //console.log(document.documentElement.scrollTop)
+        // })
+        // window.addEventListener('scroll', function () {
+        //     console.log(document.documentElement.scrollTop)
+        //     const n = document.documentElement.scrollTop
+        //     if (n >= 100) {
+        //         div.style.display = 'block'
+        //     } else {
+        //         div.style.display = 'none'
+        //     }
+        // })
+        // 创建一个数组
+        var fruits = ['apple', 'banana', 'cherry'];
+
+        // 使用forEach遍历数组
+        fruits.forEach(function (item, index, array) {
+            console.log('Element at index ' + index + ' is ' + item);
+        });
+
     </script>
 </body>
 

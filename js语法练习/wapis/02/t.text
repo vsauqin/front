@@ -1,0 +1,49 @@
+<script>
+    (function () {
+      // 获取电梯元素
+      const elevator = document.querySelector('.xtx-elevator')
+      // 监听滚动事件
+      window.addEventListener('scroll', function () {
+        // 获取滚动距离
+        const n = document.documentElement.scrollTop
+        // 如果滚动距离大于等于300，则电梯的透明度为1
+        // 否则，电梯的透明度为0
+        n >= 300 ? elevator.style.opacity = 1 : elevator.style.opacity = 0
+      })
+      // 获取返回顶部元素
+      const backtop = document.querySelector('#backTop')
+      // 监听点击事件
+      backtop.addEventListener('click', function () {
+        // 返回到滚动距离为0
+        document.documentElement.scrollTop = 0
+      })
+    })();
+
+
+
+    //点击页面可以直接跳转
+    (function () {
+      const list = document.querySelector('.xtx-elevator-list')
+      list.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          //获取对应的li a 的active对象
+          const old = document.querySelector('.xtx-elevator-list .active')
+          //如果原来有active对象，就直接移除，没有不做处理
+          if (old) {
+            old.classList.remove('active')
+          }
+          //对没有的添加active类
+          e.target.classList.add('active')
+
+          //获取每个li对应的自定义尾缀
+          //e.target.dataset.name
+          //获取每个li对应的自定义尾缀
+          //const name = e.target.dataset.name
+          //获取每个大模块顶部到屏幕顶部的距离
+          const top = document.querySelector(`.xtx_goods_${e.target.dataset.name}`).offsetTop
+          //滚动到对应的位置
+          document.documentElement.scrollTop = top
+        }
+      })
+    })();
+  </script>
