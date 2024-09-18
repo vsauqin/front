@@ -1,0 +1,144 @@
+.jd_topnav {
+    width: 1903px;
+    height: 53px;
+    background-color: #333333;
+}
+
+.jd_topnav .jd_navs {
+    width: 1240px;
+    height: 53px;
+    margin: 0 auto;
+    background-color: #333333;
+}
+
+.jd_topnav .jd_navs li {
+    position: relative;
+    float: right;
+    width: 88px;
+    height: 53px;
+
+
+
+}
+
+.jd_topnav .jd_navs li a {
+    position: absolute;
+    display: block;
+    width: 88px;
+    height: 14px;
+    padding: 0 15px;
+    left: 50%;
+    top: 50%;
+    margin-left: -50%;
+    margin-top: -8px;
+    text-align: center;
+    color: #cccccc;
+    /* border-left: 1px solid black; */
+
+}
+
+/* .jd_topnav .jd_navs li a::before {
+    content: "|";
+    float: left;
+    color: #cccccc;
+}
+
+.jd_topnav .jd_navs li a :first-child::before {
+    display: none;
+} */
+
+.jd_topnav .jd_wrapper .jd_navs li>a {
+    border-right: 2px solid #cccccc;
+    line-height: 1;
+}
+
+/* 去掉一个的左边框 */
+.jd_topnav .jd_wrapper .jd_navs li:first-child>a {
+    border-left: none;
+}
+
+/* .jd_topnav .jd_nsavs li>a:first-child {
+    border-left: none;
+} */
+
+.jd_topnav .jd_navs li a:hover {
+    color: red;
+}
+
+.jd_header {
+    width: 100%;
+    height: 100px;
+    background-color: #e3e4e5;
+}
+
+.jd_header .wrapper {
+    width: 1240px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: pink;
+}
+
+.jd_header .wrapper .jd_logo {
+    float: left;
+    width: 135px;
+    height: 100px;
+    background-image: url(../image/mlogo.jpg);
+    background-repeat: no-repeat;
+    /* 等比例缩放 */
+    background-size: 135px 100px;
+}
+
+.jd_header .wrapper .jd_navs .clearfix {
+    float: left;
+    width: 855px;
+    height: 100px;
+    background-color: yellow;
+}
+
+.jd_header .wrapper .jd_navs .clearfix li {
+    position: relative;
+    float: left;
+    width: 90px;
+    height: 100px;
+    margin-left: 5px;
+    background-color: pink;
+
+}
+
+.jd_header .wrapper .jd_navs .clearfix li a {
+    position: absolute;
+    display: block;
+    width: 88px;
+    height: 14px;
+    padding: 0 15px;
+    left: 50%;
+    top: 50%;
+    margin-left: -50%;
+    margin-top: -8px;
+    text-align: center;
+    color: black;
+}
+
+.jd_header .wrapper .jd_search {
+    width: 230px;
+    height: 100px;
+    background-color: green;
+    float: right;
+}
+
+.jd_header .wrapper .jd_search a {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    border-radius: 2px;
+    /* margin-left: 5px; */
+}
+
+.jd_header .wrapper .jd_search .jd_search_wrapper input {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 2px;
+    margin-left: 5px;
+}

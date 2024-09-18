@@ -94,7 +94,7 @@ a img {
 
 #content {
     clear: both;
-    height: 5000px;
+    height: 535px;
     /* background-color: green; */
 }
 
@@ -364,7 +364,7 @@ a img {
     width: 48px;
     height: 25px;
     vertical-align: middle;
-    ;
+
 }
 
 #login-wrap .bgc .total .bottom .two {
@@ -372,6 +372,49 @@ a img {
     width: 70px;
     height: 16px;
     margin-bottom: 16px;
+}
+
+#footer .links {
+    text-align: center;
+}
+
+#footer .links a {
+    color: #999;
+    font-size: 12px;
+    font-family: "microsoft yahei";
+    font-weight: 400;
+    line-height: 16px;
+    margin: 0 10px;
+}
+
+#footer .links a:hover {
+    color: #ff6700;
+}
+
+#footer .links {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+#footer .copyright {
+    height: 21px;
+    margin: 10px 0;
+    line-height: 21px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.footer .copyright a {
+    color: #999;
+    font-size: 12px;
+    font-family: "microsoft yahei";
+    font-weight: 400;
+    line-height: 16px;
+    margin-right: 10px;
+}
+
+.footer .copyright a:hover {
+    color: #ff6700;
 }
 
 /* #login-wrap .bgc .middle .login-tab {
